@@ -1,7 +1,7 @@
-import { doSomething } from './scripts/module';
-import './styles/styles.scss';
-import './styles/normalize.css';
-import image from './assets/group.jpg';
+import { doSomething } from '../module';
+import '../../styles/styles.scss';
+import '../../styles/normalize.css';
+import image from '../../assets/group.jpg';
 
 let img = document.createElement('img');
 img.src = image;

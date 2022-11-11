@@ -20,9 +20,9 @@ console.log(mode + ' mode');
 const config = {
     entry: { 
         // точка входа, какие скрипты вставлять
-        index: './src/index.js',
-        quiz: './src/scripts/quiz.js',
-        gallery: './src/scripts/gallery.js',
+        index: './src/scripts/main/index.js',
+        quiz: './src/scripts/quiz/quiz.js',
+        gallery: './src/scripts/gallery/gallery.js',
     },
     devtool: 'source-map', // отображение страницы в браузере как в VSCode
     output: {
