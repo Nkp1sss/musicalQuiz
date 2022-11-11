@@ -21,6 +21,8 @@ const config = {
     entry: { 
         // точка входа, какие скрипты вставлять
         index: './src/index.js',
+        quiz: './src/scripts/quiz.js',
+        gallery: './src/scripts/gallery.js',
     },
     devtool: 'source-map', // отображение страницы в браузере как в VSCode
     output: {
@@ -36,10 +38,22 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: './src/index.html',
+            template: './src/pages/index.html',
             chunks: ['index'], // какие скрипты подключать к странице
             inject: 'body', // вставить скрипт в конец тега body
             // minify: false,  отменить минификацию
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'quiz.html',
+            template: './src/pages/quiz.html',
+            chunks: ['quiz'],
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'gallery.html',
+            template: './src/pages/gallery.html',
+            chunks: ['gallery'],
+            inject: 'body',
         }),
         new CopyPlugin({
             patterns: [
