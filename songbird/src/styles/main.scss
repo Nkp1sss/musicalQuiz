@@ -2,6 +2,19 @@
 
 $bodyColor: pink;
 
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
 body {
     background-color: $bodyColor;
+    margin-left: 20px;
 }
+
+// .container {
+//     margin: 0 auto;
+//     max-width: 1280px;
+//     height: 600px;
+//     background-color: pink;
+// }

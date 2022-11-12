@@ -1,0 +1,65 @@
+@import './normalize.css';
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0; 
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+    background-color: pink;
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 3px;
+    /** TODO!!! 
+    *   при достижении определенной ширины сделать 3 колонки 1fr 1fr 1fr
+    */
+    .list__item {
+        height: 30px;
+        background-color: red;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.question {
+    background-color: antiquewhite;
+    height: 300px;
+}
+
+.answer {
+    height: 500px;
+    background-color: aquamarine;
+}
+
+.game {
+    display: flex;
+    justify-content: space-evenly;
+    height: 500px;
+
+    &__answers {
+        background-color: bisque;
+        width: 500px;
+    }
+
+    &__description {
+        background-color: blanchedalmond;
+        width: 500px;
+    }
+}
