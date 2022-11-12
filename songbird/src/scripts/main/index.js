@@ -1,30 +1,6 @@
-import { doSomething } from '../module';
-import '../../styles/styles.scss';
-import '../../styles/normalize.css';
-import image from '../../assets/group.jpg';
-
-let img = document.createElement('img');
-img.src = image;
-document.body.appendChild(img);
-
-
-
-doSomething();
-
-console.log("Hello World!");
-
-for (let i = 0; i < 10; i++) {
-    console.log('dfffaaaaaaa');
-}
+import '../../styles/main.scss';
 
 let el = document.createElement('div');
-el.textContent = ('Element from TS');
+el.textContent = 'Element from JS';
 el.className = 'style';
 document.body.appendChild(el);
-
-
-setTimeout(() => {
-    let a = 'dsf';
-    console.log(a + b);
-
-}, 100)
