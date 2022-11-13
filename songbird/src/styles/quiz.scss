@@ -40,12 +40,16 @@ body {
 
 .question {
     background-color: antiquewhite;
-    height: 300px;
-}
+    display: flex;
+    align-items: center;
 
-.answer {
-    height: 500px;
-    background-color: aquamarine;
+    &__image {
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+        margin: 10px;
+        border: none;
+    }
 }
 
 .game {
