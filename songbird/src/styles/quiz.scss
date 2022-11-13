@@ -7,18 +7,34 @@
 
 body {
     margin: 0;
-    padding: 0; 
+    padding: 0;
+    font-family: 'Comfortaa', cursive;
+    font-size: 20px;
+    // background-image: url('/dist/assets/images/phone.jpg');
+    // background-position: center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
 }
 
 .container {
     margin: 0 auto;
     max-width: 1280px;
-    background-color: pink;
+    // background-color: pink;
 }
 
 .about {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+
+    &__logo {
+        width: 200px;
+    }
+
+    &__score {
+        font-size: 32px;
+    }
 }
 
 .pagination {
@@ -30,7 +46,7 @@ body {
     */
     .list__item {
         height: 30px;
-        background-color: red;
+        background-color: pink;
         border-radius: 10px;
         display: flex;
         justify-content: center;
@@ -41,25 +57,75 @@ body {
 .question {
     background-color: antiquewhite;
     display: flex;
-    align-items: center;
+    border-radius: 10px;
 
     &__image {
         width: 200px;
         height: 200px;
         border-radius: 10px;
-        margin: 10px;
+        margin: 20px 20px;
         border: none;
+    }
+
+    &__about {
+        margin: 0 0 0 20px;
+
+        &-name {
+            font-size: 56px;
+            margin: 50px 0 0 0;
+        }
     }
 }
 
 .game {
     display: flex;
     justify-content: space-evenly;
-    height: 500px;
 
     &__answers {
         background-color: bisque;
         width: 500px;
+
+        .answers-list {
+            margin: 0;
+            padding: 0;
+        }
+
+        .answers-list__item {
+            list-style-type: none;
+            cursor: pointer;
+            font-size: 28px;
+            margin: 15px 0 0 0;
+            background-color: #F77C00;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 10px;
+
+            &:before {
+                content: '';
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                background-color: gray;
+                display: inline-block;
+                position: relative;
+                top: 4px;
+                right: 5px;
+                transition: 0.3s;
+            }
+        }
+        .error {
+            text-decoration: line-through;
+
+            &:before {
+                background-color: red;
+            }
+        }
+
+        .win {
+            &:before {
+                background-color: greenyellow;
+            }
+        }
     }
 
     &__description {
