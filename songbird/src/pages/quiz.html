@@ -12,7 +12,6 @@
         <div class="container">
             <div class="about">
                 <img src="assets/icons/logo2.png" alt="logo" class="about__logo">
-                <!-- <img  alt="logo" class="about__logo">about__logo</img> -->
                 <div class="about__score">score: 0</div>
             </div>
             <div class="pagination list">
@@ -27,7 +26,25 @@
                 <img src="assets/images/question.jpg" class="question__image">
                 <div class="question__about">
                     <p class="question__about-name">*****</p>
-                    <div class="question__about-audioplayer">ЗДЕСЬ ДОЛЖЕН БЫТЬ ПЛЕЕР</div>
+                    <div class="question__about-audioplayer">
+                        <div class="player">
+                            <div class="add-wrapper">
+                                <div class="btn play">
+                                    <img class="img__src" src="./assets/icons/play-button.png" alt="btn">
+                                </div>
+                                <audio class="audio" src="https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC489247-190724_09.10h_huiszwaluw_biesbosch_amaliahoeve_roep_100%2Bex_fouragerend_gezien_%20%282%29.mp3"></audio>
+                                <div class="progress__container">
+                                    <div class="progress"></div>
+                                    <div class="start-time">0:00</div>
+                                    <div class="end-time">0:00</div>
+                                </div>
+                            </div>
+                            <div class="volume__container">
+                                <img src="./assets/icons/voice.png" alt="volume" class="volume__img">
+                                <input type="range" class="volume" min="0" max="100" value="99">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="game">
@@ -41,9 +58,12 @@
                         <li class="answers-list__item" data-item-id="6"></li>
                     </ul>
                 </div>
-                <div class="game__description">Послушайте плеер Выберите аааааааааааааааааа</div>
+                <div class="game__description">
+                    Послушайте плеер и выберите песню.
+                    
+                </div>
             </div>
-            <button class="button next-button">next level</button>
+            <button class="button next-button" disabled>next level</button>
         </div>
     </main>
 
