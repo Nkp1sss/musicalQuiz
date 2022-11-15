@@ -65,6 +65,7 @@ body {
     &__image {
         width: 200px;
         height: 200px;
+        object-fit: cover;
         border-radius: 10px;
         margin: 20px 20px;
         border: none;
@@ -144,7 +145,6 @@ body {
             // transition: opacity .2s;
         }
         .volume::-webkit-slider-thumb {
-            //   ползунок сам
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
@@ -215,4 +215,98 @@ body {
 
 
     }
+}
+
+
+.description-song {
+    display: flex;
+
+    .song__image {
+        margin: 10px;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+
+.mini-player {
+    margin: 10px;
+    flex-grow: 1;
+
+    .button, .mini-volume__img {
+        cursor: pointer;
+    }
+
+    .add-wrapper {
+        display: flex;
+        margin-top: 10px;
+        align-items: center;
+    }
+
+    .mini-progress__container {
+        margin: -5px 0 0 6px;
+        background-color: #E4E9ED;
+        border-radius: 5px;
+        width: 100%;
+        height: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+
+        .mini-progress {
+            background-color: #2B3C5B;
+            border-radius: 5px;
+            height: 6px;
+            // width: 160px;
+        }
+
+        .mini-start-time {
+            font-size: 16px;
+            position: absolute;
+            top: 15px;
+            cursor: default;
+        }
+        .mini-end-time {
+            font-size: 16px;
+            position: absolute;
+            right: 0;
+            top: 15px;
+            cursor: default;
+        }
+    }
+
+    .mini-volume__container {
+        display: flex;
+        align-items: center;
+        margin: 5px 0 0 -5px;
+
+        .mini-volume {
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: #E4E9ED;
+            height: 10px;
+            border-radius: 5px;
+        }
+    
+        .mini-volume::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            background-color: #2B3C5B;
+            border-radius: 6px;
+            border: 1px solid #1c2847;
+            cursor: pointer;
+        }
+    }
+}
+
+.description-text {
+    font-size: 18px;
+    margin: 10px;
 }

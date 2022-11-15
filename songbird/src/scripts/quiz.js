@@ -27,14 +27,13 @@ let question__img = document.querySelector('.question__image');
 let question__about_name = document.querySelector('.question__about-name');
 let about__score = document.querySelector('.about__score');
 let list__items = document.querySelectorAll('.list__item');
-console.log(list__items);
 
 
 let currentQuestion = 0;
 let currentQuestionScore = 5;
 let totalScore = 0;
 
-let targetId; // randomly generated target id 
+let targetId = 0; // randomly generated target id 
 let shuffledArray = [];
 let isWin = false;
 
@@ -113,7 +112,7 @@ function resetAll() {
     })
 
     progress.style.width = 0;
-    endTime.textContent = '0:00';
+    endTime.textContent = '00:00';
     question__img.src = 'assets/images/question.jpg';
     question__about_name.textContent = '*****';
     next__button.disabled = true;
@@ -157,3 +156,98 @@ let saveVolume = 0.5;
 volumeImg.addEventListener('click', () => {
     saveVolume = setVolumeByImgClick(saveVolume, volume, volumeImg, audio);
 })
+
+
+/** Miniplayer */
+let gameDescription = document.querySelector('.game__description');
+
+let descriptionSong = createElement('div', 'description-song');
+let descriptionText = createElement('div', 'description-text');
+let songImg = createElement('img', 'song__image');
+let songName = createElement('div', 'song__name');
+let miniPlayer = createElement('div', 'mini-player');
+let addWrapper = createElement('div', 'add-wrapper');
+let miniPlayBtn = createElement('div', 'button mini-play');
+let miniImgSrc = createElement('img', 'mini-img__src');
+let miniAudio = createElement('audio', 'mini-audio');
+let miniProgressContainer = createElement('div', 'mini-progress__container');
+let miniProgress = createElement('div', 'mini-progress');
+let miniStartTime = createElement('div', 'mini-start-time');
+let miniEndTime = createElement('div', 'mini-end-time');
+let miniVolumeContainer = createElement('div', 'mini-volume__container');
+let miniVolumeImg = createElement('img', 'mini-volume__img');
+let miniVolume = createElement('input', 'mini-volume');
+
+answers__list.addEventListener('click', event => {
+    const target = event.target.closest('li');
+
+    if (!target) { return; }
+
+    createMiniPlayer(gameDescription, target.dataset.itemId);
+})
+
+miniPlayBtn.addEventListener('click', () => {
+    console.log('test');
+    if (miniPlayer.classList.contains('play'))
+        pauseSong(miniPlayer, miniAudio, miniImgSrc);
+    else
+        playSong(miniPlayer, miniAudio, miniImgSrc);
+})
+
+miniAudio.addEventListener('timeupdate', event => {
+    updateProgress(event, miniProgress, miniStartTime, miniEndTime);
+});
+
+miniProgressContainer.addEventListener('click', event => {
+    setProgress(event, miniAudio, miniProgressContainer);
+});
+
+miniAudio.addEventListener('ended', () => {
+    endSong(miniPlayer, miniImgSrc);
+});
+
+miniVolume.addEventListener('input', () => {
+    setVolume(miniAudio, miniVolume, miniVolumeImg);
+})
+
+let miniSaveVolume = 0.5;
+miniVolumeImg.addEventListener('click', () => {
+    miniSaveVolume = setVolumeByImgClick(miniSaveVolume, miniVolume, miniVolumeImg, miniAudio);
+})
+
+function createMiniPlayer(root, targetId) {
+    root.textContent = '';
+
+    descriptionText.textContent = shuffledArray[targetId - 1].description;
+    songImg.src = shuffledArray[targetId - 1].image;
+    songName.textContent = shuffledArray[targetId - 1].name;
+    miniImgSrc.src = './assets/icons/play-button.png';
+    miniAudio.src = shuffledArray[targetId - 1].audio;
+    miniStartTime.textContent = '00:00';
+    miniEndTime.textContent = '00:00';
+    miniProgress.style.width = 0;
+    endSong(miniPlayer, miniImgSrc);
+    miniVolumeImg.src = './assets/icons/voice.png';
+    miniVolume.type = 'range';
+    miniVolume.min = 0;
+    miniVolume.max = 100;
+    miniVolume.value = 99;
+
+    root.append(descriptionSong);
+        descriptionSong.append(songImg);
+        descriptionSong.append(miniPlayer)
+            miniPlayer.append(songName);
+            miniPlayer.append(addWrapper);
+                addWrapper.append(miniPlayBtn);
+                    miniPlayBtn.append(miniImgSrc);
+                addWrapper.append(miniAudio);
+                addWrapper.append(miniProgressContainer);
+                    miniProgressContainer.append(miniProgress);
+                    miniProgressContainer.append(miniStartTime);
+                    miniProgressContainer.append(miniEndTime);
+            miniPlayer.append(miniVolumeContainer);
+                miniVolumeContainer.append(miniVolumeImg);
+                miniVolumeContainer.append(miniVolume);
+
+    root.append(descriptionText);
+}

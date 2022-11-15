@@ -20,6 +20,7 @@ export function pauseSong(wrapper, audio, imgSrc) {
 export function endSong(wrapper, imgSrc) {
     wrapper.classList.remove('play');
     imgSrc.src = './assets/icons/play-button.png';
+
 }
 
 // Progress bar
