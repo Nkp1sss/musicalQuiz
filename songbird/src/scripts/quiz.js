@@ -27,7 +27,7 @@ let question__img = document.querySelector('.question__image');
 let question__about_name = document.querySelector('.question__about-name');
 let about__score = document.querySelector('.about__score');
 let list__items = document.querySelectorAll('.list__item');
-
+let gameDescription = document.querySelector('.game__description');
 
 let currentQuestion = 0;
 let currentQuestionScore = 5;
@@ -46,6 +46,7 @@ next__button.addEventListener('click', () => {
 function nextQuestion(currentIndex) {
     resetAll();
     endSong(player, imgSrc);
+    gameDescription.textContent = 'Послушайте плеер и выберите песню.';
 
     shuffledArray = shuffle(birdsData[currentIndex]);
     targetId = getRandomNumber(1, 6);
@@ -159,8 +160,6 @@ volumeImg.addEventListener('click', () => {
 
 
 /** Miniplayer */
-let gameDescription = document.querySelector('.game__description');
-
 let descriptionSong = createElement('div', 'description-song');
 let descriptionText = createElement('div', 'description-text');
 let songImg = createElement('img', 'song__image');
