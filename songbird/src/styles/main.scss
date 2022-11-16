@@ -8,13 +8,38 @@ $bodyColor: pink;
 }
 
 body {
-    background-color: $bodyColor;
-    margin-left: 20px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', cursive;
+    background-image: url('../assets/images/myArtBord.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
-// .container {
-//     margin: 0 auto;
-//     max-width: 1280px;
-//     height: 600px;
-//     background-color: pink;
-// }
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+.header {
+    background-color: rgba($color: black, $alpha: 0.7)
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 44px;
+    color: white;
+
+    &__start, &__gallery {
+        cursor: pointer;
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
