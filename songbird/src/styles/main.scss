@@ -16,6 +16,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
 }
 
 .container {
@@ -24,22 +27,135 @@ body {
 }
 
 .header {
-    background-color: rgba($color: black, $alpha: 0.7)
+    background-color: rgba($color: white, $alpha: 0.4);
 }
 
 .nav {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     font-size: 44px;
-    color: white;
+    margin: 0 20px;
 
-    &__start, &__gallery {
+    .language {
+        font-size: 44px;
         cursor: pointer;
+        transition: 0.1s;
+
+        &:hover {
+            border-bottom: 3px solid black;
+        }
+
+        @media screen and (max-width: 639px) {
+            font-size: 32px;
+        }
+    }
+
+    .header__logo {
+        @media screen and (max-width: 639px) {
+            width: 64px;
+        }
+    }
+}
+
+.main {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main__start, .main__gallery {
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
 
         a {
             text-decoration: none;
-            color: white;
+            color: black;
+            transition: 0.3s;
+            font-size: 64px;
+            border: 5px solid black;
+            border-radius: 15px;
+
+            &:hover {
+                color: red;
+                border: 5px solid red;
+                text-shadow: #f84f6e 0 0 15px;
+            }
+
+            @media screen and (max-width: 639px) {
+                font-size: 48px;
+                border: 4px solid black;
+                
+                &:hover {
+                    border: 4px solid red;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: rgba($color: white, $alpha: 0.4);
+    flex: 0 0 auto;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .github__wrapper {
+        img {
+            transition: filter 0.2s linear;
+            filter: brightness(2) grayscale(1) opacity(0.5);
+            transition: 0.3s;
+
+            &:hover {
+                filter: none;
+                transform: scale(1.1);
+            }
+
+            @media screen and (max-width: 639px) {
+                width: 48px;
+            }
+        }
+    }
+
+    .year {
+        font-size: 28px;
+
+        @media screen and (max-width: 639px) {
+            font-size: 24px;
+        }
+    }
+
+    .rsschool {
+        width: 100px;
+
+        @media screen and (max-width: 639px) {
+            width: 80px;
+        }
+
+        img {
+            transition: filter 0.2s linear;
+            filter: brightness(2) grayscale(1) opacity(0.5);
+            transition: 0.3s;
+
+            &:hover {
+                filter: none;
+                transform: scale(1.1);
+            }
         }
     }
 }

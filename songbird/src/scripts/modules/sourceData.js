@@ -1,102 +1,102 @@
-const birdsData = [
+const musicData = [
     [
         {
             id: 1,
-            name: 'Ворон',
-            species: 'Corvus corax',
-            description: 'Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах крыльев – до полутора метров. Вороны населяют окрестности Тауэра. В Англии бытует поверье, что в день, когда черные вороны улетят от Тауэра, монархия рухнет.',
-            image: 'https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3'
+            name: 'Прощай',
+            performer: 'Майот',
+            description: '«Прощай» — третий трек Артёма в 2022 году, посвящённый его уже бывшей девушке Ирине. В последнее время следящая за Артёмом и Ринной аудитория стала замечать, что пара перестала вести совместную активность. Выдвинулись предположения о их расставании, которые подтвердила сама Ирина в своём Телеграм-канале.',
+            image: './assets/images/lyrics/goodbye.webp',
+            audio: './assets/audio/lyrics/goodbye.mp3'
         },
         {
             id: 2,
-            name: 'Журавль',
-            species: 'Grus grus',
-            description: 'Звуки, издаваемые журавлем, похожи на звонкое «кур-лы – кур-лы». Журавли чаще всего поют дуэтом – одна птица начинает запев со слога «кур», а вторая подхватывает «лы». Если птица поёт одна, то она издает только звук «кур».',
-            image: 'https://live.staticflickr.com/65535/49221158846_b0b69a58f1.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC512582-190604_1087_Grus_tok.mp3'
+            name: 'По крышам',
+            performer: 'Feduk, OG BUDA',
+            description: "7 октября 2022 года Feduk выпускает альбом частью которого становится трек «По крышам».",
+            image: './assets/images/lyrics/overRoofs.png',
+            audio: './assets/audio/lyrics/overRoofs.mp3'
         },
         {
             id: 3,
-            name: 'Ласточка',
-            species: 'Delichon urbicum',
-            description: 'Для ласточек характерно негромкое щебетание. Песни ласточек не смолкают на протяжении всего лета. Исследователи различают у птиц до 6 щебечущих звуков: «вит», «ви-вит», «чивит», «чиривит» и т.п. Ласточки любят петь дуэтом.',
-            image: 'https://live.staticflickr.com//65535//48539007512_5029d2a9a0.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC489247-190724_09.10h_huiszwaluw_biesbosch_amaliahoeve_roep_100%2Bex_fouragerend_gezien_%20%282%29.mp3'
+            name: 'Не теряя',
+            performer: 'Miyagi, Эндшпиль',
+            description: '«Не теряя» - трек Miyagi и Эндшпиля из альбома «Hattori». В этой композиции музыканты высказывают свое отношение к вещам, о которых невозможно не высказаться в 2022 году, будучи уроженцем СНГ - это тема войны, которая идет на Украине. в песне нет места злу и ненависти, наоборот, только вайб добра, которым Мияги и Энди всегда топили и будут топить людские сердца.',
+            image: './assets/images/lyrics/dontLose.jpg',
+            audio: './assets/audio/lyrics/dontLose.mp3'
         },
         {
             id: 4,
-            name: 'Козодой',
-            species: 'Caprimulgus europaeus',
-            description: 'Козодой – неприметная птица, известная благодаря своему голосу. Песня козодоя звучит как монотонная трель похожая на тарахтение мотоцикла. Такое дребезжание слышно от заката до рассвета, его тональность, частота и громкость изменяются. ',
-            image: 'https://live.staticflickr.com/65535/48456345286_dbc8530027.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC486956-190623_22.37h_nachtzwaluw_rechte%20heide_zang_ad%20_2ex_gezien_.mp3'
+            name: 'Сектор приз',
+            performer: 'ЛСП',
+            description: 'Сингл ЛСП, выпущенный в начале сентября 2022 года. Впервые был представлен на фестивале ЛАСТОЧКА SUMMEET 2022 в начале июня этого же года. В треке рассказывается печальная история, связанная с неблагополучием, наркотиками, предательством и тюрьмой, в которую Олег включил отсылки и метафоры, отсылающие к знаменитому капитал-шоу «Поле чудес». Интересно, что за гитару на этом треке отвечает известный российский телеведущий Иван Ургант.',
+            image: './assets/images/lyrics/sectorPriz.jpg',
+            audio: './assets/audio/lyrics/sectorPriz.mp3'
         },
         {
             id: 5,
-            name: 'Кукушка',
-            species: 'Cuculus canorus',
-            description: 'Кукушку назвали так из-за особенностей ее песен. Звонкое «ку-ку» не спутать ни с какой другой птицей. Кукушки не строят гнезда, их потомство выращивают другие виды пернатых, которым кукушки подбрасывают свои яйца.',
-            image: 'https://live.staticflickr.com/65535/48377838151_e15f430ec1.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC501461-190616_08.13h_koekoek_brabantse%20biesbosch%20jantjesplaat_roep_1%20ex_ad%20m_ter%20plaatse%20zingend_gezien_.mp3'
+            name: 'Конечная станция',
+            performer: 'Markul',
+            description: 'Первый сингл Маркула, выпущенный после релиза сольного альбома Sense Of Human и переноса им концертов в России. Это лиричный трек, в котором Марк поддаётся меланхоличным рассуждениям о жизни, смерти и месте человека в огромном мире. По некоторым строкам можно понять, что эти мысли навеяны именно печальными событиями 2022 года и оптимизма в артисте остаётся всё меньше.',
+            image: './assets/images/lyrics/lastStation.jpg',
+            audio: './assets/audio/lyrics/lastStation.mp3'
         },
         {
             id: 6,
-            name: 'Синица',
-            species: 'Parus major',
-            description: 'В щебетании синиц различают более 40 различных звуковых сочетаний. Поют они практически круглый год, немного затихая только зимой. Синицы настоящие санитары леса. Одна пара синиц в период гнездования оберегает от вредителей десятки деревьев.',
-            image: 'https://live.staticflickr.com//65535//49366042493_c48c81d58d.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/RFGQDPLDEC/XC518417-Kj%C3%B8ttmeis%20XC%20Helg%C3%B8ya%20Elias%20A.%20Ryberg20200108133922_079.mp3'
+            name: 'Imago',
+            performer: 'КУОК',
+            description: 'Имаго — финальная стадия метаморфоз, в которой объект обретает крылья. Финальная стадия эволюции. Аутро альбома IMAGO, которое вышло как первый сингл альбома 18 февраля.',
+            image: './assets/images/lyrics/imago.png',
+            audio: './assets/audio/lyrics/imago.mp3'
         }
     ],
     [
         {
             id: 1,
-            name: 'Воробей',
-            species: 'Passer domesticus',
-            description: 'Воробьи являются самыми известными и узнаваемыми пернатыми. Их легко узнать по пестрому оперению и задорному чириканью. Воробьи относятся к синатропному виду — они селятся поблизости к человеческому жилищу.',
-            image: 'https://live.staticflickr.com//65535//49366595303_06cf65b07e.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/CXFHOPIVAS/XC503224-191020_0134.mp3'
+            name: 'Соната ей',
+            performer: 'PHARAOH',
+            description: '«Соната ей» - разогревочный микс-сингл, которым PHARAOH «открывает новую главу». «Я всегда боялся оставаться на месте. Я всегда испытывал страх перед отсутствием движения жизни, будто еще секунда и смерть. Я никогда не считал себя умным, но я всегда хотел им быть», — такими словами Глеб анонсировал грядущий альбом «Филармония».',
+            image: './assets/images/releasesOnNovember18/sonataHer.jpg',
+            audio: './assets/audio/releasesOnNovember18/sonataHer.mp3'
         },
         {
             id: 2,
-            name: 'Грач',
-            species: 'Corvus frugilegus',
-            description: 'Грачи очень умные и сообразительные птицы. С помощью клюва они создают и используют простейшие орудия. У грачей развит рефлекс на звуки трактора. Услышав «тарахтение», они летят на звук – трактор пашет землю, значит, в этом месте много корма.',
-            image: 'https://live.staticflickr.com//65535//49347123322_291c86b016.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/RLRHCUIPIY/XC512540-gawron%20Suble%2019.12.19%20%2012.35.mp3'
+            name: 'Времени нет',
+            performer: 'Баста, Feduk',
+            description: 'По-настоящему отцовский фит как в прямом, так и в переносном смысле! Это первый, официально выпущенный трек дуэта. Однажды они уже встречались на одном бите в треке «Мама», но то был сайфер при участии Скриптонита, Niman\'a и Truwer\'a.',
+            image: './assets/images/releasesOnNovember18/noTime.jpg',
+            audio: './assets/audio/releasesOnNovember18/noTime.mp3'
         },
         {
             id: 3,
-            name: 'Галка',
-            species: 'Coloeus monedula',
-            description: 'Слово «галка» произошло из старославянского языка и переводится как «чёрный». Этим словом часто называют воронов или других черных птиц. Латинское название галки «monedula» связывают со словами монета за любовь птицы к блестящим и ярким вещам.',
-            image: 'https://live.staticflickr.com//65535//49237149586_993cf685c5.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC510498-Coloeus%20monedula_2019.11.13_11.55_01.mp3'
+            name: 'Два выстрела',
+            performer: 'Mary Gu, MAYOT',
+            description: '«2 ВЫСТРЕЛА» — это трек, в котором Майот в очередной раз подтверждает свою универсальность, демонстрируя вокальные данные. В нём он поёт о боли расстояния и размышляет над давно избитой, но верной фразой: «Пока имеешь — не ценишь».',
+            image: './assets/images/releasesOnNovember18/twoShots.jpg',
+            audio: './assets/audio/releasesOnNovember18/twoShots.mp3'
         },
         {
             id: 4,
-            name: 'Певчий дрозд',
-            species: 'Turdus philomelos',
-            description: 'Дрозд — лучший певец из отряда воробьиных. Песня состоит только из красивых звучных свистов и коротких трелей. Чаще всего её можно услышать в утреннее и вечернее время. Поют дрозды в течении всего периода гнездования.',
-            image: 'https://live.staticflickr.com/65535/48979125763_e2534f54bd.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC513326-190704_1146_TF-Glogow.mp3'
+            name: 'Down in atalanta',
+            performer: 'TRAVIS SCOTT, PHARRELL WILLIAMS',
+            description: 'У фанатов, соскучившихся по новому материалу Pharrell Williams и Travis Scott, сегодня праздник: артисты представили третий совместный трек «DOWN IN ATLANTA» под продакшен Уиллиамса. Ожидалось, что композиция станет синглом к альбому Трэвиса «Utopia», но трек стоит за авторством Фаррелла, так что, вероятнее всего, он попадёт на его предстоящий альбом.',
+            image: './assets/images/releasesOnNovember18/downInAtalanta.jpg',
+            audio: './assets/audio/releasesOnNovember18/downInAtalanta.mp3'
         },
         {
             id: 5,
-            name: 'Сорока',
-            species: 'Pica pica',
-            description: 'Сорока очень трудолюбивая птица. Она строит до восьми гнёзд, а потом выбирает из них самое лучшее. Вход в гнездо сорок всегда обращен на юг, чтобы в жилище было теплее. Сороки являются единственными птицами, которые узнают себя в зеркале.',
-            image: 'https://live.staticflickr.com//65535//49360363066_ff02bb6a73.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC500868-Pica%20pica2019.08.23_09.18_02.mp3'
+            name: 'Мне это не нужно',
+            performer: 'KIZARU',
+            description: 'Трек, отрывок которого разошёлся по всему рунету, став одним из самых ожидаемых от Олега, вышел на новом альбоме! «МНЕ ЭТО НЕ НУЖНО» — лирическая история о том, что Олег вовсе не ищет славы в Интернете, а всего лишь «согревает души» своих слушателей.',
+            image: './assets/images/releasesOnNovember18/iDontNeedIt.jpg',
+            audio: './assets/audio/releasesOnNovember18/iDontNeedIt.mp3'
         },
         {
             id: 6,
-            name: 'Сойка',
-            species: 'Garrulus glandarius',
-            description: 'Когда сойка волнуется, хохолок на её голове взъерошивается. Птица старается создать устрашающее зрелище. Сойки умеют имитировать голоса других птиц, животных и звуки, которые создает человек. На зиму они делают большие запасы желудей и орехов.',
-            image: 'https://live.staticflickr.com//65535//49369678956_9a7465c7f4.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/TFOGOENSTQ/XC501517-191008_1590%201300.%20Eichelh%C3%A4her%20D%2C%20NW%2C%20LEV.%20Stephan%20Risch.mp3'
+            name: 'Космических снов',
+            performer: 'Космонавтов нет',
+            description: 'Поп-рок трио, успешно ворвавшееся во все возможные чарты и плейлисты в начале 2020 года, продолжает покорять внимание новых слушателей. «Космических снов» — это трек, выполненный в лучших традициях: подростковая любовь, мечты и совсем немного детского фанатизма.',
+            image: './assets/images/releasesOnNovember18/6.png',
+            audio: './assets/audio/releasesOnNovember18/6.mp3'
         }
     ],
     [
@@ -301,4 +301,7 @@ const birdsData = [
     ]
 ];
 
-export default birdsData;
+export default musicData;
+
+
+// «»

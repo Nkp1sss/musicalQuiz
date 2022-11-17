@@ -1,9 +1,9 @@
 import createElement from './modules/createElements.js';
-import birdsData from './modules/sourceData.js';
+import musicData from './modules/sourceData.js';
 import shuffle, { getRandomNumber } from './modules/shuffle.js';
 import { playError, playWin } from './modules/playSound.js';
 import { loadSong, playSong, pauseSong, updateProgress, setProgress, 
-        setVolume, setVolumeByImgClick, endSong } from './modules/audioplayer.js';
+    setVolume, setVolumeByImgClick, endSong, setVolumeProgress } from './modules/audioplayer.js';
 
 import '../styles/quiz.scss';
 
@@ -48,7 +48,7 @@ function nextQuestion(currentIndex) {
     endSong(player, imgSrc);
     gameDescription.textContent = 'Послушайте плеер и выберите песню.';
 
-    shuffledArray = shuffle(birdsData[currentIndex]);
+    shuffledArray = shuffle(musicData[currentIndex]);
     targetId = getRandomNumber(1, 6);
 
     answers__items.forEach((item, index) => {
@@ -158,6 +158,11 @@ volumeImg.addEventListener('click', () => {
     saveVolume = setVolumeByImgClick(saveVolume, volume, volumeImg, audio);
 })
 
+setVolumeProgress(volume);
+volume.addEventListener('input', () => {
+    setVolumeProgress(volume);
+}) 
+
 
 /** Miniplayer */
 let descriptionSong = createElement('div', 'description-song');
@@ -214,6 +219,11 @@ miniVolumeImg.addEventListener('click', () => {
     miniSaveVolume = setVolumeByImgClick(miniSaveVolume, miniVolume, miniVolumeImg, miniAudio);
 })
 
+
+miniVolume.addEventListener('input', () => {
+    setVolumeProgress(miniVolume);
+}) 
+
 function createMiniPlayer(root, targetId) {
     root.textContent = '';
 
@@ -248,5 +258,6 @@ function createMiniPlayer(root, targetId) {
                 miniVolumeContainer.append(miniVolumeImg);
                 miniVolumeContainer.append(miniVolume);
 
+    setVolumeProgress(miniVolume);
     root.append(descriptionText);
 }
