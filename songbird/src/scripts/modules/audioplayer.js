@@ -67,8 +67,8 @@ export function setVolume(audio, volume, volumeImg) {
 }
 
 export function setVolumeProgress(volume) {
-    var value = (volume.value - volume.min) / (volume.max - volume.min) * 100
-    volume.style.background = 'linear-gradient(to right, #2B3C5B 0%, #2B3C5B ' + value + '%, #E4E9ED ' + value + '%, #E4E9ED 100%)'
+    // var value = (volume.value - volume.min) / (volume.max - volume.min) * 100
+    // volume.style.background = 'linear-gradient(to right, #2B3C5B 0%, #2B3C5B ' + value + '%, #E4E9ED ' + value + '%, #E4E9ED 100%)'
 }
 
 // Set volume by image click

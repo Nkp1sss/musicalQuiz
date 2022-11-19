@@ -5,26 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/icons/favicon.ico">
     <title>quiz</title>
 </head>
 <body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="./index.html">
+                    <img src="assets/icons/2.png" alt="logo" class="header__logo">
+                </a>
+                <div class="about__score">score: 0</div>
+                <div class="language">
+                    EN
+                </div>
+            </nav>
+        </div>
+    </header>
     <main class="main">
         <div class="container">
-            <div class="about">
-                <img src="assets/icons/testLogo.png" alt="logo" class="about__logo">
-                <div class="about__score">score: 0</div>
-            </div>
             <div class="pagination list">
                 <div class="list__item">Лирика</div>
                 <div class="list__item">Релизы 18 ноября</div>
                 <div class="list__item">Рок</div>
-                <div class="list__item">Поп</div>
-                <div class="list__item">Трэп</div>
+                <div class="list__item">Русский рэп</div>
+                <div class="list__item">Зарубежный рэп</div>
                 <div class="list__item">Джаз</div>
-                <!-- <div class="list__item">Фонк</div> -->
             </div>
             <div class="question">
-                <img src="assets/images/question.jpg" class="question__image">
+                <img src="assets/images/hol.jpg" class="question__image">
                 <div class="question__about">
                     <p class="question__about-name">*****</p>
                     <div class="question__about-audioplayer">
@@ -59,16 +68,27 @@
                         <li class="answers-list__item" data-item-id="6"></li>
                     </ul>
                 </div>
-                <div class="game__description">
+                <div class="game__description empty">
                     Послушайте плеер и выберите песню.
-                    
                 </div>
             </div>
-            <button class="button next-button" disabled>next level</button>
+            <div class="button__wrapper"><button class="button next-button" disabled>Следующий</button></div>
         </div>
     </main>
-
-    <br><br><br><br><br>
-    <a href="./gallery.html">gallery</a>
+    <footer class="footer">
+        <div class="container">
+            <a class="github-link" href="https://github.com/nkp1sss">
+                <div class="github__wrapper">
+                    <img src="assets/icons/github.png" alt="github">
+                </div>
+            </a>
+            <div class="year">2022</div>
+            <a class="rschool-link" href="https://rs.school/js/">
+                <div class="rsschool">
+                    <img src="https://rs.school/images/rs_school_js.svg" alt="rsschool">
+                </div>
+            </a>
+        </div>
+    </footer>
 </body>
 </html>

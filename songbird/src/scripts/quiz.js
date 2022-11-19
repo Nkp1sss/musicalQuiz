@@ -46,7 +46,10 @@ next__button.addEventListener('click', () => {
 function nextQuestion(currentIndex) {
     resetAll();
     endSong(player, imgSrc);
+    isResult(currentQuestion);
+
     gameDescription.textContent = 'Послушайте плеер и выберите песню.';
+    gameDescription.classList.add('empty');
 
     shuffledArray = shuffle(musicData[currentIndex]);
     targetId = getRandomNumber(1, 6);
@@ -62,6 +65,8 @@ function nextQuestion(currentIndex) {
 }
 
 answers__list.addEventListener('click', event => {
+    gameDescription.classList.remove('empty');
+
     const target = event.target.closest('li');
 
     if (!target) { return; }
@@ -77,6 +82,7 @@ answers__list.addEventListener('click', event => {
             question__about_name.textContent = shuffledArray[targetId - 1].name;
 
             next__button.disabled = false;
+            next__button.classList.add('right')
 
             totalScore += currentQuestionScore;
             about__score.textContent = `score: ${totalScore}`;
@@ -114,9 +120,10 @@ function resetAll() {
 
     progress.style.width = 0;
     endTime.textContent = '00:00';
-    question__img.src = 'assets/images/question.jpg';
+    question__img.src = 'assets/images/hol.jpg';
     question__about_name.textContent = '*****';
     next__button.disabled = true;
+    next__button.classList.remove('right');
     currentQuestionScore = 5;
     isWin = false;
 }
@@ -169,6 +176,7 @@ let descriptionSong = createElement('div', 'description-song');
 let descriptionText = createElement('div', 'description-text');
 let songImg = createElement('img', 'song__image');
 let songName = createElement('div', 'song__name');
+let performerName = createElement('div', 'performer-name');
 let miniPlayer = createElement('div', 'mini-player');
 let addWrapper = createElement('div', 'add-wrapper');
 let miniPlayBtn = createElement('div', 'button mini-play');
@@ -230,6 +238,7 @@ function createMiniPlayer(root, targetId) {
     descriptionText.textContent = shuffledArray[targetId - 1].description;
     songImg.src = shuffledArray[targetId - 1].image;
     songName.textContent = shuffledArray[targetId - 1].name;
+    performerName.textContent = shuffledArray[targetId - 1].performer;
     miniImgSrc.src = './assets/icons/play-button.png';
     miniAudio.src = shuffledArray[targetId - 1].audio;
     miniStartTime.textContent = '00:00';
@@ -246,6 +255,7 @@ function createMiniPlayer(root, targetId) {
         descriptionSong.append(songImg);
         descriptionSong.append(miniPlayer)
             miniPlayer.append(songName);
+            miniPlayer.append(performerName);
             miniPlayer.append(addWrapper);
                 addWrapper.append(miniPlayBtn);
                     miniPlayBtn.append(miniImgSrc);
@@ -260,4 +270,22 @@ function createMiniPlayer(root, targetId) {
 
     setVolumeProgress(miniVolume);
     root.append(descriptionText);
+}
+
+function isResult(currentQuestion) {
+    if (currentQuestion == 5) {
+        next__button.textContent = 'Результаты';
+    }
+    if (currentQuestion == 6) {
+        saveScore(totalScore);
+        goToResultPage();
+    }
+}
+
+function saveScore(score) {
+    localStorage.setItem('score', score);
+}
+
+function goToResultPage() {
+    window.location.href = 'result.html';
 }

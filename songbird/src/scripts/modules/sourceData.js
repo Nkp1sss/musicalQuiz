@@ -77,7 +77,7 @@ const musicData = [
         {
             id: 4,
             name: 'Down in atalanta',
-            performer: 'TRAVIS SCOTT, PHARRELL WILLIAMS',
+            performer: 'TRAVIS SCOTT',
             description: 'У фанатов, соскучившихся по новому материалу Pharrell Williams и Travis Scott, сегодня праздник: артисты представили третий совместный трек «DOWN IN ATLANTA» под продакшен Уиллиамса. Ожидалось, что композиция станет синглом к альбому Трэвиса «Utopia», но трек стоит за авторством Фаррелла, так что, вероятнее всего, он попадёт на его предстоящий альбом.',
             image: './assets/images/releasesOnNovember18/downInAtalanta.jpg',
             audio: './assets/audio/releasesOnNovember18/downInAtalanta.mp3'
@@ -102,201 +102,201 @@ const musicData = [
     [
         {
             id: 1,
-            name: 'Зяблик',
-            species: 'Fringilla coelebs',
-            description: 'В дикой природе насчитывается 450 видов зябликов. Зимой зяблики ведут стайный образ жизни. Иногда в их семьях можно увидеть воробьев. Запевают зяблики весной, с наступлением брачного периода. Их пение – это заливистые многоминутные рулады.',
-            image: 'https://live.staticflickr.com/65535/49143150817_2d3a2f6c1e.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC512407-150622_03%20zi%C4%99ba%20%282%29.mp3'
+            name: 'Natural',
+            performer: 'Imagine Dragons',
+            description: '«Natural» - третий сингл Imagine Dragons после выхода альбома Evolve, следующий за их совместной работой с Kygo над «Born to Be Yours»; это ведущий сингл их четвертого студийного альбома Origins. На обложке сингла изображен тот же художник из Evolve, Beeple. По словам Дэна Рейнольдса, песня о том, что со временем ты становишься немного безжалостным и черствым, когда понимаешь, что должен бороться и постоять за себя.',
+            image: './assets/images/rock/natural.jpg',
+            audio: './assets/audio/rock/natural.mp3'
         },
         {
             id: 2,
-            name: 'Клёст',
-            species: 'Loxia curvirostra',
-            description: 'Клестов называют «рождественскими» птицами. В естественных условиях они дают потомство зимой – в январе. Эти птицы утепляют свои гнезда мхом и шерстью животных, потому птенцам не холодно. В поисках шишек клесты могут улетать за 3500 км от гнезда.',
-            image: 'https://live.staticflickr.com//65535//49365470123_f2de66bb35.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/OTVUCEGYZN/XC495381-Kruisbek%20roep%20NHD%20290619.mp3'
+            name: 'Smells Like Teen Spirit',
+            performer: 'Nirvana',
+            description: 'Считающаяся многими гимном гранжа, песня «Smells Like Teen Spirit» стала лид-синглом второго студийного альбома Nirvana и дебютом на крупном лейбле, вышедшим в сентябре 1991 года под названием Nevermind. Успех и вездесущность песни в начале 90-х принесли группе непревзойденную популярность. В конце концов, Курт Кобейн устал от нее и как можно чаще убирал ее из своих концертных программ.',
+            image: './assets/images/rock/smellsLike.png',
+            audio: './assets/audio/rock/smellsLike.mp3'
         },
         {
             id: 3,
-            name: 'Горлица',
-            species: 'Streptopelia turtur',
-            description: 'Горлица обитает в смешанных и широколиственных лесах, а также в городских парках и поселках. Птицы часто выбирают места жизни рядом с человеком и легко привыкают к людям. Благодаря мелодичному приятному пению горлиц часто разводят в домашних условиях.',
-            image: 'https://live.staticflickr.com/65535/48063004977_84252f9ceb.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC324106-Turkawka_Streptopelia_turtur_Poland_Jarek_Matusiak_2011625_07.mp3'
+            name: 'Back In Black',
+            performer: 'AC/DC',
+            description: '«Back In Black» - заглавная композиция с первого альбома AC/DC с Брайаном Джонсоном, ставшая его третьим синглом. Песня является данью уважения умершему фронтмену Бону Скотту. Когда Брайану Джонсону сказали написать песню, участники группы ответили: "Она не должна быть мрачной - она должна быть для Бона и должна быть праздником". И они написали ее с точки зрения Бона. С тех пор эта песня стала главной на их концертах, а рифф является одним из самых знаковых в рок-музыке - например, это была первая песня, которую Курт Кобейн научился играть в возрасте 14 лет.',
+            image: './assets/images/rock/back.jpg',
+            audio: './assets/audio/rock/back.mp3'
         },
         {
             id: 4,
-            name: 'Дятел',
-            species: 'Dendrocopos major',
-            description: 'Дятел – заметная и шумная птица, часто живет рядом с человеком. С середины января до конца июня можно услышать «барабанную дробь» дятлов – трель от вибрации веток под быстрыми ударами клюва птицы. В хорошую погоду дробь слышна в радиусе 1,5 км.',
-            image: 'https://live.staticflickr.com/65535/49339376578_e933426455.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC518928-AB-017%20dzi%C4%99cio%C5%82%20du%C5%BCy%20agresja%20%282%29.mp3'
+            name: 'Someone That I ...',
+            performer: 'Gotye',
+            description: 'Попав в австралийские чарты в конце 2011 года, грустная история Gotye о потерянной любви продолжала подниматься в чартах на территории США в 2012 и 2013 годах. Эмоциональная песня «Somebody That I Used To Know» рассказывает о взаимно прекращенных отношениях, в которых один человек чувствует боль, которую другой отказывается чувствовать.',
+            image: './assets/images/rock/somebody.jpg',
+            audio: './assets/audio/rock/somebody.mp3'
         },
         {
             id: 5,
-            name: 'Удод',
-            species: 'Upupa epops',
-            description: 'Удоды предпочитают жить на открытых ландшафтах с отдельными деревьями или рощами. Наиболее удобными для птицы являются лесостепь и саванна. Удод может выбирать места жительства рядом с человеком: пастбища, виноградники, фруктовые сады.',
-            image: 'https://live.staticflickr.com//65535//49226383598_6f8be86a06.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC477326-dudek%20%282%29.mp3'
+            name: 'Fed Up',
+            performer: 'Ghostemane',
+            description: 'Шестая песня альбома, «Fed Up», выражает несогласие Ghostemane с наркотиками, ложью, славой и многими другими вещами. В основном он выражает свой дискомфорт по отношению к людям, которые не понимают его творчество, тексты и музыку - обычная вещь, с которой он всегда боролся.',
+            image: './assets/images/rock/fedUp.jpg',
+            audio: './assets/audio/rock/fedUp.mp3'
         },
         {
             id: 6,
-            name: 'Стриж',
-            species: 'Apus apus',
+            name: 'Enemy',
+            performer: 'Imagine Dragons, LOL',
             description: 'Стрижа можно увидеть практически в каждом уголке планеты. Они обитают как в лесных зонах, так и на открытых местностях. Живут стрижи крупными стаями. Большие колонии этих птиц можно увидеть в городах или на прибрежных скалах.',
-            image: 'https://live.staticflickr.com//65535//48386150031_7b749df74b.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/TMUAWSDHDJ/XC511871-G.mp3'
+            image: './assets/images/rock/enemy.png',
+            audio: './assets/audio/rock/enemy.mp3'
         }
     ],
     [
         {
             id: 1,
-            name: 'Жаворонок',
-            species: 'Alauda arvensis',
-            description: 'Жаворонки — перелетные птицы. С начала сентября они отлетают на юг. Возвращаются они в начале марта, независимо от того, сошел снег или нет. По прилету жаворонков определяли наступление весны и пору, когда пора пахать землю.',
-            image: 'https://live.staticflickr.com/65535/47105096764_f751fba568.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC462158-Skowronek_Alauda_arvensis_Poland_Jarek_Matusiak_%20-006%20skowronek%20%282%29.mp3'
+            name: 'Дор Блю',
+            performer: 'MORGENSHTERN, ЛСП',
+            description: 'Очередной фит с ЛСП, являющийся частью шестого студийного альбома российского рэп-исполнителя и музыканта Моргенштерна.',
+            image: './assets/images/rap/dorblu.jpg',
+            audio: './assets/audio/rap/dorblu.mp3'
         },
         {
             id: 2,
-            name: 'Соловей',
-            species: 'Luscinia luscinia',
-            description: 'Соловьи поют с начала мая и до конца лета. Каждая песня соловья состоит из 12 повторяющихся элементов, которые еще называют коленами. Кроме собственных трелей, соловьи легко и хорошо перенимают пение других птиц.',
-            image: 'https://live.staticflickr.com/7605/27669397735_f3c21758f2.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/HILVWSADVL/XC513809-R07_0052%20Thrush%20Nightingale%20Snipe.mp3'
+            name: '2 типа людей',
+            performer: 'Макс Корж',
+            description: 'Белорусский артист представил третий трек после двухлетнего перерыва со времён «Малый повзрослел». На сей раз Макс Корж выступил с лирикой и рассуждениями о верных друзьях и предателях. Его два типа людей ― полные противоположности.',
+            image: './assets/images/rap/2types.jpg',
+            audio: './assets/audio/rap/2types.mp3'
         },
         {
             id: 3,
-            name: 'Скворец',
-            species: 'Sturnus vulgaris',
-            description: 'Скворцы - перелётные птицы. Синхронный перелет больших стай скворцов называется мурмурацией. Это красивое и завораживающее явление – множество птиц будто танцуют в воздухе, образуя замысловатые фигуры, которые уменьшаются и увеличиваются в небе.',
-            image: 'https://live.staticflickr.com/65535/49357593971_9509fe1d7c.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC515519-2020.01.01_17.24_01.MP3'
+            name: 'Хлопья летят наверх',
+            performer: 'Feduk',
+            description: 'Спустя полгода обаятельный хитмейкер решил экранизировать свою главную балладу о любви. Под «Хлопья летят наверх» Feduk’a уже станцевали тысячи медляков, случилось множество первых поцелуев и признаний.',
+            image: './assets/images/rap/fly.jpg',
+            audio: './assets/audio/rap/fly.mp3'
         },
         {
             id: 4,
-            name: 'Иволга',
-            species: 'Oriolus oriolus',
-            description: 'Мелодичность голоса иволги сравнивают со звучанием флейты. Человеку сложно разглядеть иволгу, так как она обитает высоко на деревьях. Иволга не только очень красивая, но и  полезная птица. Она уничтожает ядовитых гусениц, которых не поедают другие птицы.',
-            image: 'https://live.staticflickr.com/65535/47102184004_58a93380b9.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC491801-2019.07.07_06.28_01.mp3'
+            name: 'Еще час',
+            performer: 'LOVV66, АНИ ЧЕМИ',
+            description: ' Буквально на днях Ваня анонсировал загадочный совместный трек с некой девушкой? Кто же она? Ей оказалась поп-певица Ани Чеми, которая слилась в одно единое с LOVV66 в новом треке. В треке парень и девушка играют влюблённую пару, которая пытается разобраться в отношениях: «Последняя слеза — всё, что я тебе дала» / «Последний шанс кажется очень нужным для нас», — поёт Ани.',
+            image: './assets/images/rap/hour.jpg',
+            audio: './assets/audio/rap/hour.mp3'
         },
         {
             id: 5,
-            name: 'Свиристель',
-            species: 'Bombycilla garrulus',
-            description: 'У свиристели очень цепкие коготки, что помогает птице удерживаться на ветках и склевывать ягоды, которые труднее всего достать. В период ухаживаний самец предлагает самке ягоду или другое угощение. Если самка его принимает, то птицы создают пару.',
-            image: 'https://live.staticflickr.com//65535//49367433842_1b06da0e6b.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC517421-AB-004%20%282%29%20jemio%C5%82uszka.mp3'
+            name: 'Водила',
+            performer: 'BUSHIDO ZHO',
+            description: '«vodila» — расслабленный трек, сделанный с оглядкой на традиционное звучание Западного побережья. В тексте BUSHIDO ZHO рассказывает о беспрерывной работе и росте популярности. Так BUSHIDO ZHO садится в такси, включает свою музыку и водитель сразу меняется в настроении: «Водила чувствует мой вайб, он начинает шашковать».',
+            image: './assets/images/rap/vodila.jpg',
+            audio: './assets/audio/rap/vodila.mp3'
         },
         {
             id: 6,
-            name: 'Щегол',
-            species: 'Carduelis carduelis',
-            description: 'Щеглы поют красиво и мелодично. И в природе, и в неволе они щебечут почти круглый год. В пении щегла различают более 20 переливчатых трелей. Щеглы привыкают к людям, и даже могут возвратиться к хозяину после того, как их выпустили на волю',
-            image: 'https://live.staticflickr.com//65535//49366257253_db3ce48b9a.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC489265-190724_07.58h_putter_biesbosch_%20boompjes%20langs%20open%20water_zang_1ex_ad_niet%20gezien_.mp3'
+            name: 'Не догонят',
+            performer: 'White Punk',
+            description: 'White Punk возвращается к вязкому наэлектризованному трэп-звучанию в новом сингле «Не догонят», предваряющим его следующий сольный релиз.',
+            image: './assets/images/rap/wontCatch.jpg',
+            audio: './assets/audio/rap/wontCatch.mp3'
         }
     ],
     [
         {
             id: 1,
-            name: 'Орёл',
-            species: 'Aquila nipalensis',
-            description: 'В древние времена орел был символом солнца. Орлы часто парят над землей, при этом скорость их перемещения может достигать 240 км/ч. Иллюзия медленного движения происходит из-за высоты полета – более 700 метров',
-            image: 'https://live.staticflickr.com//4835//43867392960_7105d71e19.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/KTBTZAHSXF/10_Aquila_nipalensis_al02D85.mp3'
+            name: 'Mockingbird ',
+            performer: 'Eminem',
+            description: 'Возможно, наименее оскорбительная из всех песен, эта композиция адресована и посвящена его дочерям. Эминем признает, что его медийный имидж и проблемы с наркотиками Ким стали причиной трудного воспитания, не говоря уже об их нищенском существовании.',
+            image: './assets/images/foreignRap/Mockingbird.jpg',
+            audio: './assets/audio/foreignRap/Mockingbird.mp3'
         },
         {
             id: 2,
-            name: 'Коршун',
-            species: 'Milvus migrans',
-            description: 'Коршуны – крупные хищники, в высоту они достигают около полуметра, а вес взрослых особей достигает 1 кг. Крылья узкие и длинные, их размах составляет 1,5 м. Коршуны часто гнездятся большими стаями и даже образуют крупные колонии.',
-            image: 'https://live.staticflickr.com//65535//48701190276_ee2a9ed594.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/SDPCHKOHRH/XC485740-2019-06-22%20Selenga%20Milan%20brun%20cris%20de%20quemandage%203.mp3'
+            name: 'Smack That',
+            performer: 'Akon',
+            description: 'Smack that - первый сингл второго студийного альбома Akon «Konvicted». Песня была выпущена 26 сентября 2006 года. На песню также есть музыкальное видео, которое представляет собой ремейк короткого клипа из фильма 48Hrs.Это видео - первый клип Эминема, в котором он демонстрирует татуировку "PROOF" на руке.',
+            image: './assets/images/foreignRap/SMAKDAK.png',
+            audio: './assets/audio/foreignRap/SMAKDAK.mp3'
         },
         {
             id: 3,
-            name: 'Лунь',
-            species: 'Circus cyaneus',
-            description: 'Лунь – это небольшой сокол. Питается в основном мышевидными грызунами, основа его рациона – полёвки, хомяки, мыши. Оперение луня может быть пепельно-серым. С такой птицей связано сравнение «седой, как лунь».',
-            image: 'https://live.staticflickr.com/4480/37240531151_b74619c99d.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC513498-190709_1175_Cir.cyan-f.mp3'
+            name: 'Hope',
+            performer: 'Xxxtentacion',
+            description: '«Hope» - 16-й трек с альбома XXXTENTACION, ? (Question Mark). Он был выпущен 21 февраля 2018 года на странице Икса в SoundCloud. Песня посвящена детям, которые погибли во время стрельбы в школе в Паркленде, штат Флорида, которая произошла 14 февраля 2018 года. Икс выпустил эту песню, чтобы мотивировать и поднять настроение другим детям, как он описал эту песню в ее описании на SoundCloud.',
+            image: './assets/images/foreignRap/hope.png',
+            audio: './assets/audio/foreignRap/hope.mp3'
         },
         {
             id: 4,
-            name: 'Сокол',
-            species: 'Falco peregrinus',
-            description: 'Латинское название сокола Falco произошло от слова «серп» из-за серповидной формы крыльев. Длинные и широкие крылья позволяют соколу высоко подниматься в небо и свободно парить. Скорость полёта сокола достигает 280-320 километров в час.',
-            image: 'https://live.staticflickr.com//65535//49310710607_92a3a145a9.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/MMEJYLOPDO/XC496049-Pilgrimsfalk_06.mp3'
+            name: 'God\'s Plan',
+            performer: 'Drake',
+            description: '«God\'s Plan» - это трек с хорошим настроением, в котором обсуждается будущее Дрейка. Будучи тем, кем он является в индустрии, он знает, что люди хотят, чтобы он потерпел неудачу; однако Бог не позволит ему этого сделать. Официальное музыкальное видео разделило другое настроение, так как Дрейк взял бюджет видео, составляющий 996 631,90 долларов, и раздал его семьям, школам, благотворительным организациям и многим другим. Режиссером клипа выступила Карена Эванс, которая также родом из Торонто и является протеже режиссера Икс.',
+            image: './assets/images/foreignRap/plan.png',
+            audio: './assets/audio/foreignRap/plan.mp3'
         },
         {
             id: 5,
-            name: 'Ястреб',
-            species: 'Accipiter gentilis',
-            description: 'Для всех ястребов характерны широкие и короткие крылья. Ещё один отличительный признак - белые «брови» над глазами. Славянские дружинники размещали изображение ястреба на своих знаменах, как символ отваги, мощи и безжалостности к врагам.',
-            image: 'https://live.staticflickr.com//65535//49024617331_b9d0d2c9b3.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/MMEJYLOPDO/XC512740-Duvh%C3%B6k_09.mp3'
+            name: 'Still D.R.E.',
+            performer: 'Snoop Dogg, Dr. Dre',
+            description: 'Песня была первым синглом, выпущенным со второго альбома Dr. Dre 2001 года. Хотя она считается классическим гимном Западного побережья, песня была полностью написана MC с Восточного побережья из Бруклина, Нью-Йорк, по имени Jay-Z.',
+            image: './assets/images/foreignRap/still.jpg',
+            audio: './assets/audio/foreignRap/still.mp3'
         },
         {
             id: 6,
-            name: 'Филин',
-            species: 'Bubo bubo',
-            description: 'Полет филина бесшумный, зрение очень острое. Эти особенности делают птицу непревзойденным ночным охотником. У филина нет естественных врагов, ни один зверь не охотится на взрослых птиц. А вот на птенцов нападают лисы и волки.',
-            image: 'https://live.staticflickr.com/65535/48137123012_393653c2e4.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/WNLIDKJKXT/XC518386-sense%20t%C3%ADtol.mp3'
+            name: 'Star Shopping',
+            performer: 'Lil Peep',
+            description: 'В песне «Star Shopping» Lil Peep рассказывает о своих чувствах в отношениях с Эммой Харрис, которая постепенно начинает проявлять к нему нетерпение. Он понимает, почему она так себя чувствует, и пытается дать ей понять, насколько она ему дорога. Он сообщает ей, что ему просто нужно время, чтобы все уладить.',
+            image: './assets/images/foreignRap/starShopping.png',
+            audio: './assets/audio/foreignRap/starShopping.mp3'
         }
     ],
     [
         {
             id: 1,
-            name: 'Альбатрос',
-            species: 'Diomedea exulans',
-            description: 'Альбатрос - самая крупная летающая птица в мире. Размах крыльев достигает три с половиной, вес - десять килограммов. Большую часть жизни альбатросы проводят в воздухе, покрывая над океанскими просторами огромные расстояния',
-            image: 'https://live.staticflickr.com/7557/16260253965_8e9430cb66.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/WOEAFQRMUD/XC293087-Diomedea%20exulans151120_T254.mp3'
+            name: 'Jingle Bell Rock',
+            performer: 'Bobby Helms',
+            description: 'Впервые была записана и издана молодым кантри-певцом Бобби Хелмсом. Сингл с ней вышел за два дня до Рождества 1957 года. Песня сразу стала хитом, достигнув 6-го места в Горячей сотне «Билборда». На тот момент Хелмс был новым лицом на музыкальной сцене, но уже был достаточно известен — ранее в том же году две его песни, «Fraulein» и «My Special Angel», побывали на 1-м месте американских кантри-чартов.',
+            image: './assets/images/jazz/JBR.jpg',
+            audio: './assets/audio/jazz/JBR.mp3'
         },
         {
             id: 2,
-            name: 'Олуша',
-            species: 'Sula nebouxii',
-            description: 'Особенностью голубоногой олуши является не только насыщенный ярко-синий цвет лапок, но еще и тот факт, что они очень теплые. В то время как другие виды птиц греют кладки своим телом, голубоногая олуша делает это с помощью лапок',
-            image: 'https://live.staticflickr.com/800/40645471394_4422e69ed8.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/YHKQPPJDVP/XC411507-171217_1491%20BF%20Booby%205ft%20IDLP%201230%20mp3%20amp.mp3'
+            name: 'Let It Snow!',
+            performer: 'Frank Sinatra',
+            description: '«Let It Snow!» — одна из самых известных рождественских песен на английском языке. Написана в очень знойный июльский день 1945 года поэтом Сэмми Каном и композитором Жюлем Стайном, и за годы своего существования была исполнена огромным количеством музыкантов. Известно не менее двадцати её перепевок.',
+            image: './assets/images/jazz/letItSnow.jpg',
+            audio: './assets/audio/jazz/letItSnow.mp3'
         },
         {
             id: 3,
-            name: 'Буревестник',
-            species: 'Puffinus griseus',
-            description: 'Размеры буревестниковых разные. Самые маленькие из них в длину составляют до 25 см, самые большие - до 1 м, при размахе крыльев около 2 м. Существует поверье, что появление буревестника в воздухе предвещает бурю, о чем говорит само название птицы.',
-            image: 'https://live.staticflickr.com//607//22136056020_935cb113f9.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/XQEVNREHJY/SHEARWATER%20Christmas%20Island_04_Motu_Isla%20de%20Pascua-Easter%20Island_CH_4MAR03_Alvaro%20Jaramillo.mp3'
+            name: 'Smooth Operaor',
+            performer: 'Sade',
+            description: '«Smooth Operator» — 4-й и последний сингл с дебютного альбома Diamond Life (1984) английской группы Sade. Он был выпущен в 1984 году в Англии на студии Epic Records и в 1985 — в США (Portrait Records). Сингл достиг первого места в американском чарте Adult Contemporary и №5 в Billboard Hot 100.',
+            image: './assets/images/jazz/SO.png',
+            audio: './assets/audio/jazz/SO.mp3'
         },
         {
             id: 4,
-            name: 'Пеликан',
-            species: 'Pelecanus',
-            description: 'Пеликаны — обитатели морей и рек. Ходят они неуклюже, но хорошо летают и плавают. Питаются в основном рыбой, устраивают коллективные охоты — выстроившись полукругом хлопают по воде крыльями и клювами и вытесняют напуганную рыбу на мелководье.',
-            image: 'https://live.staticflickr.com/65535/49159147156_dcbbb5c12a.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/XAMHIHFTZG/XC331138-call1.mp3'
+            name: 'What A Wonderful World',
+            performer: 'Louis Armstrong',
+            description: '«What a Wonderful World!» (с англ. — «Как прекрасен мир!») — песня, написанная Бобом Тиэлом и Джорджем Вайсом в 1967 году. Впервые была записана и получила мировую известность в исполнении Луи Армстронга. В 1999 году «What a Wonderful World» в исполнении Армстронга была введена в Зал славы «Грэмми», как лучшая песня XX века. Часто называется в числе самых известных песен Луи Армстронга и самых любимых вообще среди всех песен.',
+            image: './assets/images/jazz/WaWW.jpg',
+            audio: './assets/audio/jazz/WaWW.mp3'
         },
         {
             id: 5,
-            name: 'Пингвин',
-            species: 'Aptenodytes forsteri',
-            description: 'Самец императорского пингвина достигает роста 130 см, его масса может приближаться к 50 кг. Из всех современных пингвинов этот вид – самый крупный. Питание пингвина состоит из рыбы, кальмаров и криля. Охотятся птицы в океане большими группами.',
-            image: 'https://live.staticflickr.com/5202/5252413926_8e013a3efd.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/OOECIWCSWV/XC449827-LS100829%20King%20Penguin%20call%20A.mp3'
+            name: 'Feeling Good',
+            performer: 'Nina Simone',
+            description: '«Feeling Good» — песня на английском языке, одна из самых известных песен в репертуаре американской певицы Нины Симон. Песня была написана британскими композиторами Энтони Ньюли и Лесли Брикассом(известными также в качестве авторов театральной пьесы 1961 года Stop The World — I Want To Get Off и музыки для кинофильма 1971 года «Вилли Вонка и шоколадная фабрика») для их мюзикла The Roar Of The Greasepaint — The Smell Of The Crowd.',
+            image: './assets/images/jazz/FG.jpg',
+            audio: './assets/audio/jazz/FG.mp3'
         },
         {
             id: 6,
-            name: 'Чайка',
-            species: 'Larus argentatus',
-            description: 'Чайки населяют берега морей, озёр, рек, водохранилищ, болот, часто гнездятся на островах. С конца прошлого века чайки стали появляться в крупных городах, где устраивает гнёзда на крышах зданий. Все чайки ведут колониальный образ жизни.',
-            image: 'https://live.staticflickr.com/65535/48577115317_7034201dde.jpg',
-            audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC501190-190801_06.50h_zilvermeeuw_duinen%20van%20goeree_roep_2ex_overvliegend_gezien_.mp3'
+            name: 'L O V E',
+            performer: 'Michael Buble',
+            description: 'Первоначально песня была включена в качестве инструментальной композиции в альбом Blue Midnight в 1964 году. Была впервые записана Натом Кингом Коулом для его одноименного альбома. Это была одна из последних песен Коула, который умер через 7 месяцев после ее записи. Песня прозвучала еще в дюжине фильмов.',
+            image: './assets/images/jazz/love.jpg',
+            audio: './assets/audio/jazz/love.mp3'
         }
     ]
 ];
