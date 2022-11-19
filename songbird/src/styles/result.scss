@@ -1,0 +1,174 @@
+@import './normalize.css';
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', cursive;
+    font-size: 20px;
+    background-image: url('../assets/images/phone3test.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+.header {
+    background-color: rgba($color: white, $alpha: 0.4);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 44px;
+    margin: 0 20px;
+    color: white;
+
+    @media screen and (max-width: 840px) {
+        font-size: 36px;
+    }
+
+    @media screen and (max-width: 479px) {
+        font-size: 24px;
+    }
+
+    @media screen and (max-width: 419px) {
+        justify-content: space-between;
+    }
+
+    .about {
+        font-size: 28px;
+    }
+
+    .language {
+        font-size: 44px;
+        cursor: pointer;
+        transition: 0.1s;
+
+        &:hover {
+            border-bottom: 3px solid black;
+        }
+
+        @media screen and (max-width: 639px) {
+            font-size: 32px;
+        }
+
+        @media screen and (max-width: 479px) {
+            font-size: 24px;
+        }
+    }
+
+    .header__logo {
+        margin-top: 10px;
+
+        @media screen and (max-width: 639px) {
+            width: 64px;
+        }
+    }
+}
+
+.main {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .congratulation {
+        color: white;
+
+        font-size: 36px;
+
+        @media screen and (max-width: 500px) {
+            font-size: 24px;
+        }
+
+        .again {
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: orange;
+            transition: 0.2s;
+
+            &:hover {
+                color: orangered;
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: rgba($color: white, $alpha: 0.4);
+    flex: 0 0 auto;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+
+        @media screen and (max-width: 419px) {
+            justify-content: space-between;
+            margin: 0 15px;
+        }
+    }
+
+    .github__wrapper {
+        img {
+            transition: filter 0.2s linear;
+            filter: brightness(2) grayscale(1) opacity(0.5);
+            transition: 0.3s;
+
+            &:hover {
+                filter: none;
+                transform: scale(1.1);
+            }
+
+            @media screen and (max-width: 639px) {
+                width: 48px;
+            }
+        }
+    }
+
+    .year {
+        font-size: 28px;
+        color: white;
+
+        @media screen and (max-width: 639px) {
+            font-size: 24px;
+        }
+    }
+
+    .rsschool {
+        width: 100px;
+
+        @media screen and (max-width: 639px) {
+            width: 80px;
+        }
+
+        img {
+            transition: filter 0.2s linear;
+            filter: brightness(2) grayscale(1) opacity(0.5);
+            transition: 0.3s;
+
+            &:hover {
+                filter: none;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
