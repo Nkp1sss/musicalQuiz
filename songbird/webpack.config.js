@@ -23,6 +23,7 @@ const config = {
         index: './src/scripts/main.js',
         quiz: './src/scripts/quiz.js',
         gallery: './src/scripts/gallery.js',
+        result: './src/scripts/result.js',
     },
     devtool: 'source-map', // отображение страницы в браузере как в VSCode
     output: {
@@ -47,6 +48,12 @@ const config = {
             filename: 'quiz.html',
             template: './src/pages/quiz.html',
             chunks: ['quiz'],
+            inject: 'body',
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'result.html',
+            template: './src/pages/result.html',
+            chunks: ['result'],
             inject: 'body',
         }),
         new HtmlWebpackPlugin({
