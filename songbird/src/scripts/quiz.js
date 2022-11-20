@@ -2,8 +2,10 @@ import createElement from './modules/createElements.js';
 import musicData from './modules/sourceData.js';
 import shuffle, { getRandomNumber } from './modules/shuffle.js';
 import { playError, playWin } from './modules/playSound.js';
-import { loadSong, playSong, pauseSong, updateProgress, setProgress, 
-    setVolume, setVolumeByImgClick, endSong, setVolumeProgress } from './modules/audioplayer.js';
+import { 
+    loadSong, playSong, pauseSong, updateProgress, setProgress, 
+    setVolume, setVolumeByImgClick, endSong, setVolumeProgress 
+} from './modules/audioplayer.js';
 
 import '../styles/quiz.scss';
 
@@ -37,6 +39,63 @@ let targetId = 0; // randomly generated target id
 let shuffledArray = [];
 let isWin = false;
 
+
+/**
+ * Change Language
+ */
+let language = 'ru';
+
+let langBtn = document.querySelector('.language');
+
+const translations = {
+    ['en']: {
+        langBtn: 'RU',
+        score: 'Score',
+        list__items: ['Лирика', 'Релизы 18 ноября', 'Рок', 'Русский рэп', 'Зарубежный рэп', 'Джаз'],
+        gameDescription: 'Послушайте плеер и выберите песню.',
+        nxtBtn: 'Следующий',
+
+    },
+    ['ru']: {
+        langBtn: 'EN',
+        score: 'Счёт',
+        list__items: ['Lyric', 'Releases November 18', 'Rock', 'Russian rap', 'Foreign rap', 'Jazz'],
+        gameDescription: 'Listen to the player and choose a song.',
+        nxtBtn: 'Next',
+    }
+} 
+
+window.addEventListener('load', () => {
+    if (localStorage.getItem('language')) {
+        language = localStorage.getItem('language');
+    }
+    changeText(language);
+})
+langBtn.addEventListener('click', changeLanguage);
+
+function changeLanguage() {
+    if (language == 'ru') {
+        language = 'en';
+    } else {
+        language = 'ru';
+    }
+
+    localStorage.setItem('language', language);
+    changeText(language);
+}
+
+function changeText(language) {
+    langBtn.textContent = translations[language].langBtn;
+    about__score.textContent = `${translations[language].score}: ${totalScore}`;
+    list__items.forEach((item, index) => {
+        item.textContent = translations[language].list__items[index];
+    })
+    gameDescription.textContent = translations[language].gameDescription;
+    next__button.textContent = translations[language].nxtBtn;
+}
+
+
+
 currentQuestion = nextQuestion(currentQuestion);
 
 next__button.addEventListener('click', () => {
@@ -48,7 +107,7 @@ function nextQuestion(currentIndex) {
     endSong(player, imgSrc);
     isResult(currentQuestion);
 
-    gameDescription.textContent = 'Послушайте плеер и выберите песню.';
+    gameDescription.textContent = translations[language].gameDescription;
     gameDescription.classList.add('empty');
 
     shuffledArray = shuffle(musicData[currentIndex]);
@@ -100,10 +159,7 @@ answers__list.addEventListener('click', event => {
 
 /** Сhecks if answer choice is correct */
 function isRight(target) {
-    if (target.dataset.itemId == targetId)
-        return true;
-    else
-        return false;
+    return target.dataset.itemId == targetId ? true : false;
 }
 
 /** When clicking on the next question, 

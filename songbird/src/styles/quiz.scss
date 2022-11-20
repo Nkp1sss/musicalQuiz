@@ -58,7 +58,7 @@ body {
         transition: 0.1s;
 
         &:hover {
-            border-bottom: 3px solid black;
+            border-bottom: 3px solid white;
         }
 
         @media screen and (max-width: 639px) {
@@ -86,7 +86,7 @@ body {
 .pagination {
     margin: 10px 0 0 0;
     display: grid;
-    grid-template-columns: 1fr 1.6fr 0.7fr 1.3fr 1.6fr 1fr;
+    grid-template-columns: 1fr 2.45fr 0.7fr 1.5fr 2.3fr 1fr;
     grid-gap: 3px;
 
     @media screen and (max-width: 870px) {
