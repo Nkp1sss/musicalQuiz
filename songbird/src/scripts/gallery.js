@@ -6,6 +6,7 @@ import {
     loadSong, playSong, pauseSong, updateProgress, setProgress,
     setVolume, setVolumeByImgClick, endSong, setVolumeProgress
 } from './modules/audioplayer.js';
+import { translations } from './modules/language';
 
 /** Miniplayer */
 let descriptionSong = createElement('div', 'description-song');
@@ -26,13 +27,44 @@ let miniVolumeContainer = createElement('div', 'mini-volume__container');
 let miniVolumeImg = createElement('img', 'mini-volume__img');
 let miniVolume = createElement('input', 'mini-volume');
 
-// answers__list.addEventListener('click', event => {
-//     const target = event.target.closest('li');
+let currentItemId = 0;
 
-//     if (!target) { return; }
+/**
+ * Change Language
+ */
+let language = 'ru';
 
-//     createMiniPlayer(gameDescription, target.dataset.itemId);
-// })
+let langBtn = document.querySelector('.language');
+let galleryTitle = document.querySelector('.gallery-title');
+
+window.addEventListener('load', () => {
+    if (localStorage.getItem('language')) {
+        language = localStorage.getItem('language');
+    }
+    changeText(language);
+
+    createMiniPlayer(gameDescription, 0);
+})
+langBtn.addEventListener('click', changeLanguage);
+
+function changeLanguage() {
+    if (language == 'ru') {
+        language = 'en';
+    } else {
+        language = 'ru';
+    }
+
+    localStorage.setItem('language', language);
+    changeText(language);
+    
+    createMiniPlayer(gameDescription, currentItemId);
+}
+
+function changeText(language) {
+    langBtn.textContent = translations[language].langBtn;
+    galleryTitle.textContent = translations[language].gallery;
+}
+
 
 miniPlayBtn.addEventListener('click', () => {
     if (miniPlayer.classList.contains('play'))
@@ -71,7 +103,7 @@ function createMiniPlayer(root, targetId) {
     root.textContent = '';
     console.log('test');
 
-    descriptionText.textContent = musicData[Math.floor(targetId / 6)][targetId % 6].description;
+    descriptionText.textContent = musicData[Math.floor(targetId / 6)][targetId % 6].description[language];
     songImg.src = musicData[Math.floor(targetId / 6)][targetId % 6].image;
     songName.textContent = musicData[Math.floor(targetId / 6)][targetId % 6].name;
     performerName.textContent = musicData[Math.floor(targetId / 6)][targetId % 6].performer;
@@ -111,7 +143,7 @@ function createMiniPlayer(root, targetId) {
 let main = document.querySelector('.main');
 let gameDescription = document.querySelector('.game__description');
 
-createMiniPlayer(gameDescription, 0);
+// createMiniPlayer(gameDescription, 0);
 
 let list = document.querySelector('.list');
 
@@ -135,6 +167,8 @@ list.addEventListener('click', event => {
     const target = event.target.closest('li');
 
     if (!target) { return; }
+
+    currentItemId = target.dataset.itemId;
 
     createMiniPlayer(gameDescription, target.dataset.itemId);
 })

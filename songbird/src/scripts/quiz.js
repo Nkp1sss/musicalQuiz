@@ -6,6 +6,7 @@ import {
     loadSong, playSong, pauseSong, updateProgress, setProgress, 
     setVolume, setVolumeByImgClick, endSong, setVolumeProgress 
 } from './modules/audioplayer.js';
+import { translations } from './modules/language.js';
 
 import '../styles/quiz.scss';
 
@@ -46,24 +47,6 @@ let isWin = false;
 let language = 'ru';
 
 let langBtn = document.querySelector('.language');
-
-const translations = {
-    ['en']: {
-        langBtn: 'RU',
-        score: 'Score',
-        list__items: ['Лирика', 'Релизы 18 ноября', 'Рок', 'Русский рэп', 'Зарубежный рэп', 'Джаз'],
-        gameDescription: 'Послушайте плеер и выберите песню.',
-        nxtBtn: 'Следующий',
-
-    },
-    ['ru']: {
-        langBtn: 'EN',
-        score: 'Счёт',
-        list__items: ['Lyric', 'Releases November 18', 'Rock', 'Russian rap', 'Foreign rap', 'Jazz'],
-        gameDescription: 'Listen to the player and choose a song.',
-        nxtBtn: 'Next',
-    }
-} 
 
 window.addEventListener('load', () => {
     if (localStorage.getItem('language')) {
@@ -144,7 +127,7 @@ answers__list.addEventListener('click', event => {
             next__button.classList.add('right')
 
             totalScore += currentQuestionScore;
-            about__score.textContent = `score: ${totalScore}`;
+            about__score.textContent = `${translations[language].score}: ${totalScore}`;
         }
     }
     else {
@@ -291,7 +274,7 @@ miniVolume.addEventListener('input', () => {
 function createMiniPlayer(root, targetId) {
     root.textContent = '';
 
-    descriptionText.textContent = shuffledArray[targetId - 1].description;
+    descriptionText.textContent = shuffledArray[targetId - 1].description[language];
     songImg.src = shuffledArray[targetId - 1].image;
     songName.textContent = shuffledArray[targetId - 1].name;
     performerName.textContent = shuffledArray[targetId - 1].performer;
