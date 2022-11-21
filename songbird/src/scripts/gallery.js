@@ -159,3 +159,5 @@ list.addEventListener('click', event => {
 
     createMiniPlayer(gameDescription, target.dataset.itemId);
 });
+
+console.log('Самооценка: 270 баллов. Выполнены все требования.');

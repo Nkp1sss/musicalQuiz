@@ -44,3 +44,5 @@ function changeText(language) {
     congratulationText.textContent = `${translations[language].congratulationTextLeft}${getScore()}${translations[language].congratulationTextRight}`;
     againLink.textContent = translations[language].again;
 }
+
+console.log('Самооценка: 270 баллов. Выполнены все требования.');
