@@ -11,8 +11,14 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    "no-plusplus": 'off',
+    "no-shadow": "off",
+    "comma-dangle": "off",
+    "arrow-parens": "off",
     "linebreak-style": ["error", "windows"],
     "indent": ["error", 4],
-    'no-plusplus': 'off',
+    "no-use-before-define": ["error", {
+      "functions": false,
+    }],
   },
 };

@@ -25,4 +25,4 @@ export const translations = {
         congratulationTextRight: ' баллов из 30!',
         again: 'Сыграть еще раз?',
     }
-} 
+};

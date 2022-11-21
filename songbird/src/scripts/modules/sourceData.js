@@ -84,7 +84,7 @@ const musicData = [
             name: 'Времени нет',
             performer: 'Баста, Feduk',
             description: {
-                ['en']: 'A truly fatherly fit, both literally and figuratively! This is the duo\'s first, officially released track.They already met once on one beat in the track "Mama", but that was a cypher with Skriptonite, Niman\a and Truwer\a.',
+                ['en']: 'A truly fatherly fit, both literally and figuratively! This is the duo\'s first, officially released track.They already met once on one beat in the track "Mama", but that was a cypher with Skriptonite, Nimana and Truwera.',
                 ['ru']: 'По-настоящему отцовский фит как в прямом, так и в переносном смысле! Это первый, официально выпущенный трек дуэта. Однажды они уже встречались на одном бите в треке «Мама», но то был сайфер при участии Скриптонита, Niman\'a и Truwer\'a.'
             },
             image: './assets/images/releasesOnNovember18/noTime.jpg',
@@ -117,7 +117,7 @@ const musicData = [
             name: 'Мне это не нужно',
             performer: 'KIZARU',
             description: {
-                ['en']: 'The track, a snippet of which went all over the Runet and became one of the most anticipated from Oleg, was released on the new album! "I don\'t need this" is a lyrical story about Oleg not looking for fame on the Internet, but only \"warming the souls\" of his listeners.',
+                ['en']: 'The track, a snippet of which went all over the Runet and became one of the most anticipated from Oleg, was released on the new album! "I don\'t need this" is a lyrical story about Oleg not looking for fame on the Internet, but only "warming the souls" of his listeners.',
                 ['ru']: 'Трек, отрывок которого разошёлся по всему рунету, став одним из самых ожидаемых от Олега, вышел на новом альбоме! «МНЕ ЭТО НЕ НУЖНО» — лирическая история о том, что Олег вовсе не ищет славы в Интернете, а всего лишь «согревает души» своих слушателей.'
             },
             image: './assets/images/releasesOnNovember18/iDontNeedIt.jpg',
@@ -231,7 +231,7 @@ const musicData = [
             name: 'Хлопья летят наверх',
             performer: 'Feduk',
             description: {
-                ['en']: 'Six months later, the charming hitmaker decided to film his main ballad about love. Feduk\'s "Flakes Are Flying Upstairs\" has already been danced to by thousands of slow dances, many first kisses and confessions have happened.',
+                ['en']: 'Six months later, the charming hitmaker decided to film his main ballad about love. Feduk\'s "Flakes Are Flying Upstairs" has already been danced to by thousands of slow dances, many first kisses and confessions have happened.',
                 ['ru']: 'Спустя полгода обаятельный хитмейкер решил экранизировать свою главную балладу о любви. Под «Хлопья летят наверх» Feduk’a уже станцевали тысячи медляков, случилось множество первых поцелуев и признаний.'
             },
             image: './assets/images/rap/fly.jpg',
@@ -410,6 +410,3 @@ const musicData = [
 ];
 
 export default musicData;
-
-
-// «»

@@ -1,31 +1,31 @@
 import '../styles/gallery.scss';
 
-import createElement from './modules/createElements.js';
-import musicData from './modules/sourceData.js';
+import createElement from './modules/createElements';
+import musicData from './modules/sourceData';
 import {
-    loadSong, playSong, pauseSong, updateProgress, setProgress,
-    setVolume, setVolumeByImgClick, endSong, setVolumeProgress
-} from './modules/audioplayer.js';
+    playSong, pauseSong, updateProgress, setProgress,
+    setVolume, setVolumeByImgClick, endSong
+} from './modules/audioplayer';
 import { translations } from './modules/language';
 
 /** Miniplayer */
-let descriptionSong = createElement('div', 'description-song');
-let descriptionText = createElement('div', 'description-text');
-let songImg = createElement('img', 'song__image');
-let songName = createElement('div', 'song__name');
-let performerName = createElement('div', 'performer-name');
-let miniPlayer = createElement('div', 'mini-player');
-let addWrapper = createElement('div', 'add-wrapper');
-let miniPlayBtn = createElement('div', 'button mini-play');
-let miniImgSrc = createElement('img', 'mini-img__src');
-let miniAudio = createElement('audio', 'mini-audio');
-let miniProgressContainer = createElement('div', 'mini-progress__container');
-let miniProgress = createElement('div', 'mini-progress');
-let miniStartTime = createElement('div', 'mini-start-time');
-let miniEndTime = createElement('div', 'mini-end-time');
-let miniVolumeContainer = createElement('div', 'mini-volume__container');
-let miniVolumeImg = createElement('img', 'mini-volume__img');
-let miniVolume = createElement('input', 'mini-volume');
+const descriptionSong = createElement('div', 'description-song');
+const descriptionText = createElement('div', 'description-text');
+const songImg = createElement('img', 'song__image');
+const songName = createElement('div', 'song__name');
+const performerName = createElement('div', 'performer-name');
+const miniPlayer = createElement('div', 'mini-player');
+const addWrapper = createElement('div', 'add-wrapper');
+const miniPlayBtn = createElement('div', 'button mini-play');
+const miniImgSrc = createElement('img', 'mini-img__src');
+const miniAudio = createElement('audio', 'mini-audio');
+const miniProgressContainer = createElement('div', 'mini-progress__container');
+const miniProgress = createElement('div', 'mini-progress');
+const miniStartTime = createElement('div', 'mini-start-time');
+const miniEndTime = createElement('div', 'mini-end-time');
+const miniVolumeContainer = createElement('div', 'mini-volume__container');
+const miniVolumeImg = createElement('img', 'mini-volume__img');
+const miniVolume = createElement('input', 'mini-volume');
 
 let currentItemId = 0;
 
@@ -34,21 +34,22 @@ let currentItemId = 0;
  */
 let language = 'ru';
 
-let langBtn = document.querySelector('.language');
-let galleryTitle = document.querySelector('.gallery-title');
+const langBtn = document.querySelector('.language');
+const galleryTitle = document.querySelector('.gallery-title');
+const list = document.querySelector('.list');
+const gameDescription = document.querySelector('.game__description');
 
 window.addEventListener('load', () => {
     if (localStorage.getItem('language')) {
         language = localStorage.getItem('language');
     }
     changeText(language);
-
     createMiniPlayer(gameDescription, 0);
-})
+});
 langBtn.addEventListener('click', changeLanguage);
 
 function changeLanguage() {
-    if (language == 'ru') {
+    if (language === 'ru') {
         language = 'en';
     } else {
         language = 'ru';
@@ -56,7 +57,6 @@ function changeLanguage() {
 
     localStorage.setItem('language', language);
     changeText(language);
-    
     createMiniPlayer(gameDescription, currentItemId);
 }
 
@@ -65,13 +65,13 @@ function changeText(language) {
     galleryTitle.textContent = translations[language].gallery;
 }
 
-
 miniPlayBtn.addEventListener('click', () => {
-    if (miniPlayer.classList.contains('play'))
+    if (miniPlayer.classList.contains('play')) {
         pauseSong(miniPlayer, miniAudio, miniImgSrc);
-    else
+    } else {
         playSong(miniPlayer, miniAudio, miniImgSrc);
-})
+    }
+});
 
 miniAudio.addEventListener('timeupdate', event => {
     updateProgress(event, miniProgress, miniStartTime, miniEndTime);
@@ -87,23 +87,18 @@ miniAudio.addEventListener('ended', () => {
 
 miniVolume.addEventListener('input', () => {
     setVolume(miniAudio, miniVolume, miniVolumeImg);
-})
+});
 
 let miniSaveVolume = 0.5;
 miniVolumeImg.addEventListener('click', () => {
     miniSaveVolume = setVolumeByImgClick(miniSaveVolume, miniVolume, miniVolumeImg, miniAudio);
-})
-
-
-miniVolume.addEventListener('input', () => {
-    setVolumeProgress(miniVolume);
-})
+});
 
 function createMiniPlayer(root, targetId) {
     root.textContent = '';
-    console.log('test');
 
-    descriptionText.textContent = musicData[Math.floor(targetId / 6)][targetId % 6].description[language];
+    descriptionText.textContent = musicData[Math.floor(targetId / 6)][targetId % 6]
+    .description[language];
     songImg.src = musicData[Math.floor(targetId / 6)][targetId % 6].image;
     songName.textContent = musicData[Math.floor(targetId / 6)][targetId % 6].name;
     performerName.textContent = musicData[Math.floor(targetId / 6)][targetId % 6].performer;
@@ -121,7 +116,7 @@ function createMiniPlayer(root, targetId) {
 
     root.prepend(descriptionSong);
         descriptionSong.append(songImg);
-        descriptionSong.append(miniPlayer)
+        descriptionSong.append(miniPlayer);
             miniPlayer.append(songName);
             miniPlayer.append(performerName);
             miniPlayer.append(addWrapper);
@@ -136,27 +131,19 @@ function createMiniPlayer(root, targetId) {
                 miniVolumeContainer.append(miniVolumeImg);
                 miniVolumeContainer.append(miniVolume);
 
-    setVolumeProgress(miniVolume);
     root.append(descriptionText);
 }
-
-let main = document.querySelector('.main');
-let gameDescription = document.querySelector('.game__description');
-
-// createMiniPlayer(gameDescription, 0);
-
-let list = document.querySelector('.list');
 
 let currentId = 0;
 musicData.forEach(genre => {
     genre.forEach(music => {
         createListItem(list, music, currentId);
         currentId++;
-    })
-})
+    });
+});
 
 function createListItem(root, music, id) {
-    let item = createElement('li', 'list__item');
+    const item = createElement('li', 'list__item');
 
     item.textContent = `${id + 1}. ${music.name}`;
     item.setAttribute('data-item-id', id);
@@ -171,4 +158,4 @@ list.addEventListener('click', event => {
     currentItemId = target.dataset.itemId;
 
     createMiniPlayer(gameDescription, target.dataset.itemId);
-})
+});

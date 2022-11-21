@@ -1,12 +1,12 @@
-import createElement from './modules/createElements.js';
-import musicData from './modules/sourceData.js';
-import shuffle, { getRandomNumber } from './modules/shuffle.js';
-import { playError, playWin } from './modules/playSound.js';
-import { 
-    loadSong, playSong, pauseSong, updateProgress, setProgress, 
-    setVolume, setVolumeByImgClick, endSong, setVolumeProgress 
-} from './modules/audioplayer.js';
-import { translations } from './modules/language.js';
+import createElement from './modules/createElements';
+import musicData from './modules/sourceData';
+import shuffle, { getRandomNumber } from './modules/shuffle';
+import { playError, playWin } from './modules/playSound';
+import {
+    loadSong, playSong, pauseSong, updateProgress, setProgress,
+    setVolume, setVolumeByImgClick, endSong
+} from './modules/audioplayer';
+import { translations } from './modules/language';
 
 import '../styles/quiz.scss';
 
@@ -19,45 +19,43 @@ const player = document.querySelector('.player'),
     imgSrc = document.querySelector('.img__src'),
     startTime = document.querySelector('.start-time'),
     endTime = document.querySelector('.end-time'),
-    volumeContainer = document.querySelector('.volume__container'),
     volumeImg = document.querySelector('.volume__img'),
     volume = document.querySelector('.volume');
 
-let next__button = document.querySelector('.next-button');
-let answers__list = document.querySelector('.answers-list');
-let answers__items = document.querySelectorAll('.answers-list__item');
-let question__img = document.querySelector('.question__image');
-let question__about_name = document.querySelector('.question__about-name');
-let about__score = document.querySelector('.about__score');
-let list__items = document.querySelectorAll('.list__item');
-let gameDescription = document.querySelector('.game__description');
+const next__button = document.querySelector('.next-button'),
+    answers__list = document.querySelector('.answers-list'),
+    answers__items = document.querySelectorAll('.answers-list__item'),
+    question__img = document.querySelector('.question__image'),
+    question__about_name = document.querySelector('.question__about-name'),
+    about__score = document.querySelector('.about__score'),
+    list__items = document.querySelectorAll('.list__item'),
+    gameDescription = document.querySelector('.game__description');
 
 let currentQuestion = 0;
 let currentQuestionScore = 5;
 let totalScore = 0;
 
-let targetId = 0; // randomly generated target id 
+let targetId = 0; // randomly generated target id
 let shuffledArray = [];
 let isWin = false;
-
 
 /**
  * Change Language
  */
 let language = 'ru';
 
-let langBtn = document.querySelector('.language');
+const langBtn = document.querySelector('.language');
 
 window.addEventListener('load', () => {
     if (localStorage.getItem('language')) {
         language = localStorage.getItem('language');
     }
     changeText(language);
-})
+});
 langBtn.addEventListener('click', changeLanguage);
 
 function changeLanguage() {
-    if (language == 'ru') {
+    if (language === 'ru') {
         language = 'en';
     } else {
         language = 'ru';
@@ -72,18 +70,16 @@ function changeText(language) {
     about__score.textContent = `${translations[language].score}: ${totalScore}`;
     list__items.forEach((item, index) => {
         item.textContent = translations[language].list__items[index];
-    })
+    });
     gameDescription.textContent = translations[language].gameDescription;
     next__button.textContent = translations[language].nxtBtn;
 }
-
-
 
 currentQuestion = nextQuestion(currentQuestion);
 
 next__button.addEventListener('click', () => {
     currentQuestion = nextQuestion(currentQuestion);
-})
+});
 
 function nextQuestion(currentIndex) {
     resetAll();
@@ -98,7 +94,7 @@ function nextQuestion(currentIndex) {
 
     answers__items.forEach((item, index) => {
         item.textContent = shuffledArray[index].name;
-    })
+    });
 
     loadSong(shuffledArray, targetId, audio);
     highlightCurQuestion(currentQuestion);
@@ -124,38 +120,39 @@ answers__list.addEventListener('click', event => {
             question__about_name.textContent = shuffledArray[targetId - 1].name;
 
             next__button.disabled = false;
-            next__button.classList.add('right')
+            next__button.classList.add('right');
 
             totalScore += currentQuestionScore;
             about__score.textContent = `${translations[language].score}: ${totalScore}`;
         }
-    }
-    else {
+    } else {
         if (!answers__items[target.dataset.itemId - 1].classList.contains('error')
             && !isWin) {
             playError();
             answers__items[target.dataset.itemId - 1].classList.add('error');
             currentQuestionScore -= 1;
         }
-    } 
-})
+    }
+});
 
 /** Сhecks if answer choice is correct */
 function isRight(target) {
-    return target.dataset.itemId == targetId ? true : false;
+    return target.dataset.itemId === targetId;
 }
 
-/** When clicking on the next question, 
+/** When clicking on the next question,
  * removes all classes and sets default values */
 function resetAll() {
     answers__items.forEach(item => {
-        if (item.classList.contains('error'))
-            item.classList.remove('error');  
-    })
+        if (item.classList.contains('error')) {
+            item.classList.remove('error');
+        }
+    });
     answers__items.forEach(item => {
-        if (item.classList.contains('win'))
+        if (item.classList.contains('win')) {
             item.classList.remove('win');
-    })
+        }
+    });
 
     progress.style.width = 0;
     endTime.textContent = '00:00';
@@ -172,15 +169,15 @@ function highlightCurQuestion(currentQuestion) {
     list__items[currentQuestion].classList.add('highlight');
 }
 
-
-/** 
+/**
  * Audioplayer
  */
 playBtn.addEventListener('click', () => {
-    if (player.classList.contains('play'))
+    if (player.classList.contains('play')) {
         pauseSong(player, audio, imgSrc);
-    else
+    } else {
         playSong(player, audio, imgSrc);
+    }
 });
 
 audio.addEventListener('timeupdate', event => {
@@ -197,37 +194,31 @@ audio.addEventListener('ended', () => {
 
 volume.addEventListener('input', () => {
     setVolume(audio, volume, volumeImg);
-})
+});
 
 let saveVolume = 0.5;
 volumeImg.addEventListener('click', () => {
     saveVolume = setVolumeByImgClick(saveVolume, volume, volumeImg, audio);
-})
-
-setVolumeProgress(volume);
-volume.addEventListener('input', () => {
-    setVolumeProgress(volume);
-}) 
-
+});
 
 /** Miniplayer */
-let descriptionSong = createElement('div', 'description-song');
-let descriptionText = createElement('div', 'description-text');
-let songImg = createElement('img', 'song__image');
-let songName = createElement('div', 'song__name');
-let performerName = createElement('div', 'performer-name');
-let miniPlayer = createElement('div', 'mini-player');
-let addWrapper = createElement('div', 'add-wrapper');
-let miniPlayBtn = createElement('div', 'button mini-play');
-let miniImgSrc = createElement('img', 'mini-img__src');
-let miniAudio = createElement('audio', 'mini-audio');
-let miniProgressContainer = createElement('div', 'mini-progress__container');
-let miniProgress = createElement('div', 'mini-progress');
-let miniStartTime = createElement('div', 'mini-start-time');
-let miniEndTime = createElement('div', 'mini-end-time');
-let miniVolumeContainer = createElement('div', 'mini-volume__container');
-let miniVolumeImg = createElement('img', 'mini-volume__img');
-let miniVolume = createElement('input', 'mini-volume');
+const descriptionSong = createElement('div', 'description-song');
+const descriptionText = createElement('div', 'description-text');
+const songImg = createElement('img', 'song__image');
+const songName = createElement('div', 'song__name');
+const performerName = createElement('div', 'performer-name');
+const miniPlayer = createElement('div', 'mini-player');
+const addWrapper = createElement('div', 'add-wrapper');
+const miniPlayBtn = createElement('div', 'button mini-play');
+const miniImgSrc = createElement('img', 'mini-img__src');
+const miniAudio = createElement('audio', 'mini-audio');
+const miniProgressContainer = createElement('div', 'mini-progress__container');
+const miniProgress = createElement('div', 'mini-progress');
+const miniStartTime = createElement('div', 'mini-start-time');
+const miniEndTime = createElement('div', 'mini-end-time');
+const miniVolumeContainer = createElement('div', 'mini-volume__container');
+const miniVolumeImg = createElement('img', 'mini-volume__img');
+const miniVolume = createElement('input', 'mini-volume');
 
 answers__list.addEventListener('click', event => {
     const target = event.target.closest('li');
@@ -235,15 +226,15 @@ answers__list.addEventListener('click', event => {
     if (!target) { return; }
 
     createMiniPlayer(gameDescription, target.dataset.itemId);
-})
+});
 
 miniPlayBtn.addEventListener('click', () => {
-    console.log('test');
-    if (miniPlayer.classList.contains('play'))
+    if (miniPlayer.classList.contains('play')) {
         pauseSong(miniPlayer, miniAudio, miniImgSrc);
-    else
+    } else {
         playSong(miniPlayer, miniAudio, miniImgSrc);
-})
+    }
+});
 
 miniAudio.addEventListener('timeupdate', event => {
     updateProgress(event, miniProgress, miniStartTime, miniEndTime);
@@ -259,17 +250,12 @@ miniAudio.addEventListener('ended', () => {
 
 miniVolume.addEventListener('input', () => {
     setVolume(miniAudio, miniVolume, miniVolumeImg);
-})
+});
 
 let miniSaveVolume = 0.5;
 miniVolumeImg.addEventListener('click', () => {
     miniSaveVolume = setVolumeByImgClick(miniSaveVolume, miniVolume, miniVolumeImg, miniAudio);
-})
-
-
-miniVolume.addEventListener('input', () => {
-    setVolumeProgress(miniVolume);
-}) 
+});
 
 function createMiniPlayer(root, targetId) {
     root.textContent = '';
@@ -292,7 +278,7 @@ function createMiniPlayer(root, targetId) {
 
     root.append(descriptionSong);
         descriptionSong.append(songImg);
-        descriptionSong.append(miniPlayer)
+        descriptionSong.append(miniPlayer);
             miniPlayer.append(songName);
             miniPlayer.append(performerName);
             miniPlayer.append(addWrapper);
@@ -307,15 +293,14 @@ function createMiniPlayer(root, targetId) {
                 miniVolumeContainer.append(miniVolumeImg);
                 miniVolumeContainer.append(miniVolume);
 
-    setVolumeProgress(miniVolume);
     root.append(descriptionText);
 }
 
 function isResult(currentQuestion) {
-    if (currentQuestion == 5) {
+    if (currentQuestion === 5) {
         next__button.textContent = 'Результаты';
     }
-    if (currentQuestion == 6) {
+    if (currentQuestion === 6) {
         saveScore(totalScore);
         goToResultPage();
     }

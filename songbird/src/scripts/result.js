@@ -2,35 +2,33 @@ import '../styles/result.scss';
 
 import { translations } from './modules/language';
 
-let congratulationText = document.querySelector('.congratulation-text');
+const congratulationText = document.querySelector('.congratulation-text');
 
 congratulationText.textContent = `Вы прошли викторину и набрали ${getScore()} баллов из 30!`;
 
 function getScore() {
-    return localStorage.getItem('score') ? localStorage.getItem('score') : 0; 
+    return localStorage.getItem('score') ? localStorage.getItem('score') : 0;
 }
-
 
 /**
  * Change Language
  */
-let congratulationTitle = document.querySelector('.congratulation-title');
-let againLink = document.querySelector('.again-link');
+const congratulationTitle = document.querySelector('.congratulation-title');
+const againLink = document.querySelector('.again-link');
+const langBtn = document.querySelector('.language');
 
 let language = 'ru';
-
-let langBtn = document.querySelector('.language');
 
 window.addEventListener('load', () => {
     if (localStorage.getItem('language')) {
         language = localStorage.getItem('language');
     }
     changeText(language);
-})
+});
 langBtn.addEventListener('click', changeLanguage);
 
 function changeLanguage() {
-    if (language == 'ru') {
+    if (language === 'ru') {
         language = 'en';
     } else {
         language = 'ru';
