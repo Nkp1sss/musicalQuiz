@@ -91,6 +91,7 @@ function nextQuestion(currentIndex) {
 
     shuffledArray = shuffle(musicData[currentIndex]);
     targetId = getRandomNumber(1, 6);
+    console.log(targetId);
 
     answers__items.forEach((item, index) => {
         item.textContent = shuffledArray[index].name;
@@ -137,7 +138,7 @@ answers__list.addEventListener('click', event => {
 
 /** Сhecks if answer choice is correct */
 function isRight(target) {
-    return target.dataset.itemId === targetId;
+    return target.dataset.itemId == targetId;
 }
 
 /** When clicking on the next question,
