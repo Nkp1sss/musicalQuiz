@@ -1,2 +1,3 @@
 # nkp1sss-JSFE2022Q3
-Private repository for @nkp1sss
+
+## Deploy: https://rolling-scopes-school.github.io/nkp1sss-JSFE2022Q3/songbird/
